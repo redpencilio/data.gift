@@ -1,24 +1,26 @@
-# mu-project
+# data.gift
 
-Bootstrap a mu.semte.ch microservices environment in three easy steps.
+Stack to host data on data.gift based on mu.semte.ch.
 
-## How to
+## Boot up the system
 
-Setting up your environment is done in three easy steps:  first you configure the running microservices and their names in `docker-compose.yml`, then you configure how requests are dispatched in `config/dispatcher.ex`, and lastly you start everything.
-
-### Hooking things up with docker-compose
-
-Alter the `docker-compose.yml` file so it contains all microservices you need.  The example content should be clear, but you can find more information in the [Docker Compose documentation](https://docs.docker.com/compose/).  Don't remove the `identifier` and `db` container, they are respectively the entry-point and the database of your application.  Don't forget to link the necessary microservices to the dispatcher and the database to the microservices.
-
-### Configure the dispatcher
-
-Next, alter the file `config/dispatcher.ex` based on the example that is there by default.  Dispatch requests to the necessary microservices based on the names you used for the microservice.
-
-### Boot up the system
-
-Boot your microservices-enabled system using docker-compose.
+Boot the system using docker-compose.
 
     cd /path/to/mu-project
     docker-compose up
 
 You can shut down using `docker-compose stop` and remove everything using `docker-compose rm`.
+
+## URL standard
+
+Data on data.gift is hosted per user on a subdomain `<user>.data.gift`.
+
+URLs are compliant with the following guidelines:
+* `/vocabularies/:name/:version`: semantic vocabularies
+* `/vocabularies/:name`: redirects to the latest version of a semantic vocabulary
+* `/contexts/:name/:version/context.json`: [JSON-LD contexts](https://json-ld.org/)
+* `/contexts/:name/context.json`: redirects to the latest version of a [JSON-LD contexts](https://json-ld.org/)
+* `/:resource-type/:id`: data resources (e.g. `/accounts/8bbf734e-967a-4c59-9923-0b104dc42f92`)
+
+## Roadmap
+* Upgrade to dispatcher supporting content negotion

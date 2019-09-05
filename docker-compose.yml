@@ -1,29 +1,36 @@
 version: '3.4'
 
 services:
+  frontend:
+    image: redpencil/frontend-data.gift:latest
+    environment:
+      STATIC_FOLDERS_REGEX: ^/(assets|font|contexts)/
+    links:
+      - identifier:backend
   identifier:
     image: semtech/mu-identifier:1.7.0
     links:
       - dispatcher:dispatcher
-    ports:
-      - "80:80"
   dispatcher:
     image: semtech/mu-dispatcher:1.1.2
     links:
       - resource:resource
+      - static-file:static-file
     volumes:
       - ./config/dispatcher:/config
   db:
-    image: tenforce/virtuoso:1.3.2-virtuoso7.2.2
+    image: tenforce/virtuoso:1.3.2-virtuoso7.2.5.1
     environment:
       SPARQL_UPDATE: "true"
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
-    ports:
-      - "8890:8890"
     volumes:
       - ./data/db:/data
+  static-file:
+    image: semtech/static-file-service:latest
+    volumes:
+      - ./data/contexts:/data/contexts
   resource:
-    image: semtech/mu-cl-resources:1.17.1
+    image: semtech/mu-cl-resources:1.18.0
     links:
       - db:database
     volumes:
