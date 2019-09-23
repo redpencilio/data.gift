@@ -11,6 +11,8 @@ services:
     image: semtech/mu-identifier:1.7.0
     links:
       - dispatcher:dispatcher
+    environment:
+      MU_AUTH_ALLOWED_GROUPS: "[{\"variables\":[],\"name\":\"public\"}]"
   dispatcher:
     image: semtech/mu-dispatcher:1.1.2
     links:
