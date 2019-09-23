@@ -28,7 +28,7 @@ services:
   static-file:
     image: semtech/static-file-service:latest
     volumes:
-      - ./data/contexts:/data/contexts
+      - ./data/static:/data
   resource:
     image: semtech/mu-cl-resources:1.18.0
     links:

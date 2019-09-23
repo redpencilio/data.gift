@@ -20,7 +20,7 @@ URLs are compliant with the following guidelines:
   * `/vocabularies/:name/:version`
   * `/vocabularies/:name`: redirects to the latest version of a semantic vocabulary
 * [JSON-LD contexts](https://json-ld.org/)
-  * `/contexts/:name/:version/context.json`: 
+  * `/contexts/:name/:version/context.json`:
   * `/contexts/:name/context.json`: redirects to the latest version of a context
 * Resources
   * `/:resource-type/:id`: data resources (e.g. `/accounts/8bbf734e-967a-4c59-9923-0b104dc42f92`)

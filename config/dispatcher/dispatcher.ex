@@ -18,8 +18,16 @@ defmodule Dispatcher do
   # docker-compose stop; docker-compose rm; docker-compose up
   # after altering this file.
   #
+  get "/vocabularies/*path" do
+    Proxy.forward conn, path, "http://static-file/vocabularies/"
+  end
+
   get "/contexts/*path" do
     Proxy.forward conn, path, "http://static-file/contexts/"
+  end
+
+  get "/application-profiles/*path" do
+    Proxy.forward conn, path, "http://static-file/application-profiles/"
   end
 
   match _ do
