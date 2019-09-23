@@ -1,0 +1,24 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix task: <http://redpencil.data.gift/vocabularies/tasks/>
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+task:Task a rdfs:Class ;
+    rdfs:isDefinedBy <http://redpencil.data.gift/vocabularies/tasks/v1/> ;
+    rdfs:subClassOf rdf:Resource ;
+    rdfs:label "Task"@en ;
+    rdfs:comment "Unit of work to be executed"@en .
+
+task:reasonOfFailure a rdf:Property
+    rdfs:isDefinedBy <http://redpencil.data.gift/vocabularies/tasks/v1/> ;
+    rdfs:label "Reason of failure"@en ;
+    rdfs:comment "Reason why a task transitioned to a failure state"@en ;
+    rdfs:domain task:Task ;
+    rdfs:range xsd:string .
+
+task:numberOfRetries a rdf:Property
+    rdfs:isDefinedBy <http://redpencil.data.gift/vocabularies/tasks/v1/> ;
+    rdfs:label "Number of retries"@en ;
+    rdfs:comment "Number of retries to succesfully end the task"@en ;
+    rdfs:domain task:Task ;
+    rdfs:range xsd:integer .
