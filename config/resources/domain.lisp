@@ -57,4 +57,4 @@
                        :inverse t
                        :as "top-concepts"))
   :resource-base (s-url "http://data.gift/concept-schemes/")
-  :on-path "conceptschemes")
+  :on-path "concept-schemes")
