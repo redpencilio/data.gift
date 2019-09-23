@@ -4,7 +4,7 @@ services:
   frontend:
     image: redpencil/frontend-data.gift:latest
     environment:
-      STATIC_FOLDERS_REGEX: ^/(assets|font|contexts)/
+      STATIC_FOLDERS_REGEX: ^/(assets|font|contexts|application-profiles|vocabularies)/
     links:
       - identifier:backend
   identifier:
