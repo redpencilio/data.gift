@@ -38,6 +38,13 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://static-file/contexts/"
   end
 
+  get "/concepts/*path" do
+    Proxy.forward conn, path, "http://cache/concepts/"
+  end
+  get "/concept-schemes/*path" do
+    Proxy.forward conn, path, "http://cache/concept-schemes/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end

@@ -4,7 +4,7 @@ services:
   frontend:
     image: redpencil/frontend-data.gift:latest
     environment:
-      STATIC_FOLDERS_REGEX: ^/(assets|font|contexts|application-profiles|vocabularies)/
+      STATIC_FOLDERS_REGEX: ^/(assets|font|contexts|application-profiles|vocabularies|concepts|concept-schemes)/
     links:
       - identifier:backend
   identifier:
@@ -29,6 +29,10 @@ services:
     image: semtech/static-file-service:latest
     volumes:
       - ./data/static:/data
+  cache:
+    image: semtech/mu-cache:2.0.0
+    links:
+      - resource:backend
   resource:
     image: semtech/mu-cl-resources:1.18.0
     links:
