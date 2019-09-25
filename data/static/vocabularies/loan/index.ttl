@@ -1,0 +1,138 @@
+@prefix schema:  <http://schema.org/> .
+@prefix eli:     <http://data.europa.eu/eli/ontology#> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix besluit:  <http://data.vlaanderen.be/ns/besluit#> .
+@prefix sat:     <http://data.europa.eu/stateaidtransparency/sat#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eu:      <http://data.europa.eu/m8g/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix person:  <http://www.w3.org/ns/person#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix locn:    <http://www.w3.org/ns/locn#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix cpsv:    <http://purl.org/vocab/cpsv#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+<http://luisterpunt.data.gift/vocabularies/loans>
+      a       owl:Ontology ;
+      rdfs:label "Luisterpunt - Loan"@en , "Luisterpunt - Uitlening"@nl ;
+      dcterms:issued "2019-09-27"^^xsd:date ;
+      dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+      dcterms:title "Luisterpunt - Loan"@en , "Luisterpunt - Uitlening"@nl ;
+      vann:preferredNamespaceUri
+              "http://luisterpunt.data.gift/vocabularies/loans" .
+
+<http://luisterpunt.data.gift/vocabularies/loans/AccessReleaseActivity>
+      a       owl:Class ;
+      rdfs:comment "Het opheffen van een toegangsrecht."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:label "Toegangsopheffing"@nl ;
+      rdfs:subClassOf prov:Activity .
+
+<http://luisterpunt.data.gift/vocabularies/loans/AccessRequest>
+      a       owl:Class ;
+      rdfs:comment "Verzoek tot het bekomen van een bepaald product/dienst."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:label "Access request"@en , "Toegangsaanvraag"@nl ;
+      rdfs:subClassOf prov:Activity .
+
+<http://luisterpunt.data.gift/vocabularies/loans/AccessRequestMethod>
+      a       owl:Class ;
+      rdfs:comment "de manier waarop de toegang werd aangevraagd."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:label "Toegangsaanvraag methode"@nl .
+
+<http://luisterpunt.data.gift/vocabularies/loans/AccessRight>
+      a       owl:Class ;
+      rdfs:comment "Een toegangsrecht geeft een gebruiker voor een bepaalde periode gebruiksrechten."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:label "Toegangsrecht"@nl , "Access right"@en .
+
+<http://luisterpunt.data.gift/vocabularies/loans/Delivery>
+      a       owl:Class ;
+      rdfs:comment "Bezorgen van een product of dienst aan de afnemer"@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:label "Levering"@nl .
+
+<http://luisterpunt.data.gift/vocabularies/loans/DeliveryMethod>
+      a       owl:Class ;
+      rdfs:comment "Manier waarop het item werd aangeleverd."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:label "leveringsmethode"@nl .
+
+<http://luisterpunt.data.gift/vocabularies/loans/GenerationActivity>
+      a       owl:Class ;
+      rdfs:comment "Activiteit die een item aanmaakt op basis van een instantie."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:label "Generation activity"@en , "Generation activity"@nl .
+
+<http://luisterpunt.data.gift/vocabularies/loans/Item>
+      a       owl:Class ;
+      rdfs:comment "Single example of an Instance."@en , "Eén specifiek voorbeeld van een instance."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:label "Item"@en , "Item"@nl ;
+      rdfs:subClassOf schema:CreativeWork , schema:IndividualProduct .
+
+<http://luisterpunt.data.gift/vocabularies/loans/Part>
+      a       owl:Class ;
+      rdfs:comment "fysieke or virtuele delen van een item, bijvoorbeeld CD's, bestanden of banden."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:label "Part"@en , "Volume"@nl ;
+      rdfs:subClassOf schema:CreativeWork , <http://luisterpunt.data.gift/vocabularies/loans/Item> .
+
+<http://luisterpunt.data.gift/vocabularies/loans/PreferenceType>
+      a       owl:Class ;
+      rdfs:comment "Type van een voorkeur, bijvoorbeeld \"auteur\" of \"stem\". Dit type omschrijft ook de te verwachte waarden."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:label "Voorkeurstype"@nl .
+
+<http://luisterpunt.data.gift/vocabularies/loans/method>
+      a       owl:ObjectProperty ;
+      rdfs:comment "aanvraag methode: automatisch, door werknemer, manueel, ..."@nl ;
+      rdfs:domain <http://luisterpunt.data.gift/vocabularies/loans/AccessRequest> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:label "methode"@nl ;
+      rdfs:range <http://luisterpunt.data.gift/vocabularies/loans/AccessRequestMethod> .
+
+schema:dateCreated
+      a       rdf:Property ;
+      rdfs:label "creatie datum"@nl .
+
+schema:hasDeliveryMethod
+      a       rdf:Property ;
+      rdfs:label "leveringsmethode"@nl .
+
+schema:isPartOf
+      a       rdf:Property ;
+      rdfs:label "is deel van"@nl .
+
+schema:validFrom
+      a       rdf:Property .
+
+schema:validThrough
+      a       rdf:Property .
+
+<http://www.w3.org/ns/auth/acl#accessTo>
+      a       rdf:Property ;
+      rdfs:label "geeft toegang tot"@nl .
+
+prov:startedAtTime
+      a       rdf:Property ;
+      rdfs:label "start"@nl .
+
+prov:wasGeneratedBy
+      a       rdf:Property ;
+      rdfs:label "werd aangemaakt door"@nl .
+
+prov:wasInvalidatedBy
+      a       rdf:Property ;
+      rdfs:label "werd geinvalideerd door"@nl .
+
+prov:wasStartedBy
+      a       rdf:Property ;
+      rdfs:label "werd gestart door"@nl .

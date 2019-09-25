@@ -1,0 +1,148 @@
+@prefix schema:  <http://schema.org/> .
+@prefix eli:     <http://data.europa.eu/eli/ontology#> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix besluit:  <http://data.vlaanderen.be/ns/besluit#> .
+@prefix sat:     <http://data.europa.eu/stateaidtransparency/sat#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eu:      <http://data.europa.eu/m8g/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix person:  <http://www.w3.org/ns/person#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix locn:    <http://www.w3.org/ns/locn#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix cpsv:    <http://purl.org/vocab/cpsv#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+<http://luisterpunt.data.gift/vocabularies/acquisition>
+      a       owl:Ontology ;
+      rdfs:label "Luisterpunt - Acquisition"@en , "Luisterpunt - Acquisitie"@nl ;
+      dcterms:issued "2019-09-27"^^xsd:date ;
+      dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+      dcterms:title "Luisterpunt - Acquisition"@en , "Luisterpunt - Acquisitie"@nl ;
+      vann:preferredNamespaceUri
+              "http://luisterpunt.data.gift/vocabularies/acquisition" .
+
+<http://luisterpunt.data.gift/vocabularies/acquisition/Cancellation>
+      a       owl:Class ;
+      rdfs:comment "Opheffing van een actie, zoals een bestelling."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/acquisition> ;
+      rdfs:label "Annulering"@nl , "Cancellation"@en .
+
+<http://luisterpunt.data.gift/vocabularies/acquisition/ExternalWorkAcquisition>
+      a       owl:Class ;
+      rdfs:comment "Verzoek tot verkrijgen van een bronbestand van een toegankelijk werk dat reeds beschikbaar is bij een externe partner."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/acquisition> ;
+      rdfs:label "Externe verwerving"@nl ;
+      rdfs:subClassOf schema:Order .
+
+<http://luisterpunt.data.gift/vocabularies/acquisition/ProductionDelivery>
+      a       owl:Class ;
+      rdfs:comment "De aanlevering van bronbestanden als gevolg van een bestelling."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/acquisition> ;
+      rdfs:label "Productie levering"@nl ;
+      rdfs:subClassOf schema:ParcelDelivery .
+
+<http://luisterpunt.data.gift/vocabularies/acquisition/ProductionRequest>
+      a       owl:Class ;
+      rdfs:comment "De bestelling van de productie van een toegankelijk werk bij een producten."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/acquisition> ;
+      rdfs:label "Productie aanvraag"@nl , "Production request"@en ;
+      rdfs:subClassOf schema:Order .
+
+<http://luisterpunt.data.gift/vocabularies/acquisition/SourceBookAcquisition>
+      a       owl:Class ;
+      rdfs:comment "Bestelling of opvraging van een zwartdrukboek."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/acquisition> ;
+      rdfs:label "source book acquisition"@en , "Zwartdrukboek bestelling"@nl ;
+      rdfs:subClassOf schema:Order .
+
+<http://luisterpunt.data.gift/vocabularies/acquisition/SourceBookDelivery>
+      a       owl:Class ;
+      rdfs:comment "De levering van een zwartdrukboek, volgend op een bestelling."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/acquisition> ;
+      rdfs:label "Zwartdrukboek levering"@nl , "Source book delivery"@en ;
+      rdfs:subClassOf schema:ParcelDelivery .
+
+<http://luisterpunt.data.gift/vocabularies/acquisition/Sourcefile>
+      a       owl:Class ;
+      rdfs:comment "Een bronbestand bevat (een deel) van) een creatief werk in een geencodeerde vorm."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/acquisition> ;
+      rdfs:label "Source file"@en , "Bronbestand"@nl ;
+      rdfs:subClassOf schema:MediaObject .
+
+<http://luisterpunt.data.gift/vocabularies/acquisition/WorkSelection>
+      a       owl:Class ;
+      rdfs:comment "Selectie van een titel."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/acquisition> ;
+      rdfs:label "Titel selectie"@nl .
+
+<http://luisterpunt.data.gift/vocabularies/acquisition/bookFormat>
+      a       owl:ObjectProperty ;
+      rdfs:comment "Het gewenste publicatieformaat van het werk."@nl ;
+      rdfs:domain <http://luisterpunt.data.gift/vocabularies/acquisition/ExternalWorkAcquisition> , <http://luisterpunt.data.gift/vocabularies/acquisition/ProductionRequest> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/acquisition> ;
+      rdfs:label "publicatie formaat"@nl , "TODO"@nl ;
+      rdfs:range <https://schema.org/BookFormatType> .
+
+<http://luisterpunt.data.gift/vocabularies/acquisition/priority>
+      a       rdf:Property ;
+      rdfs:comment "Prioriteit die aan het productieverzoek moet worden gegeven."@nl ;
+      rdfs:domain <http://luisterpunt.data.gift/vocabularies/acquisition/ProductionRequest> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/acquisition> ;
+      rdfs:label "priority"@en , "prioriteit"@nl .
+
+<http://luisterpunt.data.gift/vocabularies/acquisition/voicePreference>
+      a       rdf:Property ;
+      rdfs:comment "Man en/of vrouw, Vlaams of Nederlands."@nl ;
+      rdfs:domain <http://luisterpunt.data.gift/vocabularies/acquisition/ProductionRequest> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/acquisition> ;
+      rdfs:label "stem voorkeur"@nl .
+
+schema:contentSize
+      a       rdf:Property ;
+      rdfs:label "bestandsgrootte"@nl .
+
+schema:dateCreated
+      a       rdf:Property ;
+      rdfs:label "creatie datum"@nl .
+
+schema:dateModified
+      a       rdf:Property ;
+      rdfs:label "wijzigingsdatum"@nl , "Wijzigingsdatum"@nl .
+
+schema:description
+      a       rdf:Property ;
+      rdfs:label "beschrijving"@nl .
+
+schema:encodingFormat
+      a       rdf:Property ;
+      rdfs:label "codering"@nl .
+
+schema:itemShipped
+      a       rdf:Property ;
+      rdfs:label "verzonden bestanden"@nl .
+
+schema:name
+      a       rdf:Property ;
+      rdfs:label "naam"@nl .
+
+schema:partOfOrder
+      a       rdf:Property ;
+      rdfs:label "deel van bestelling"@nl .
+
+schema:position
+      a       rdf:Property ;
+      rdfs:label "positie"@nl .
+
+<https://www.w3.org/ns/prov#wasDerivedFrom>
+      a       rdf:Property ;
+      rdfs:label "is gebaseerd op"@nl .
+
+<https://www.w3.org/ns/prov#wasInvalidatedBy>
+      a       rdf:Property ;
+      rdfs:label "werd geïnvalideerd door."@nl , "werd geïnvalideerd door"@nl .

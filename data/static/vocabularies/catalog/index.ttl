@@ -1,0 +1,67 @@
+@prefix schema:  <http://schema.org/> .
+@prefix eli:     <http://data.europa.eu/eli/ontology#> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix besluit:  <http://data.vlaanderen.be/ns/besluit#> .
+@prefix sat:     <http://data.europa.eu/stateaidtransparency/sat#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eu:      <http://data.europa.eu/m8g/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix person:  <http://www.w3.org/ns/person#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix locn:    <http://www.w3.org/ns/locn#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix cpsv:    <http://purl.org/vocab/cpsv#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+<http://luisterpunt.data.gift/vocabularies/catalog>
+      a       owl:Ontology ;
+      rdfs:label "Luisterpunt - Catalog"@en , "Luisterpunt - Catalogus"@nl ;
+      dcterms:issued "2019-09-27"^^xsd:date ;
+      dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+      dcterms:title "Luisterpunt - Catalog"@en , "Luisterpunt - Catalogus"@nl ;
+      vann:preferredNamespaceUri
+              "http://luisterpunt.data.gift/vocabularies/catalog" .
+
+<http://luisterpunt.data.gift/vocabularies/catalog/AccessibilityFeature>
+      a       owl:Class ;
+      rdfs:comment "Toegankelijksheidskenmerk van het werk, zoals opgelijst op  https://www.w3.org/wiki/WebSchemas/Accessibility."@nl , "Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility (WebSchemas wiki lists possible values)."@en ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/catalog> ;
+      rdfs:label "AccessibilityFeature"@en , "Toegankelijkheidsfunctie"@nl .
+
+<http://luisterpunt.data.gift/vocabularies/catalog/Genre>
+      a       owl:Class ;
+      rdfs:comment "Genre van het werk"@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/catalog> ;
+      rdfs:label "Genre"@nl .
+
+<http://luisterpunt.data.gift/vocabularies/catalog/Work>
+      a       owl:Class ;
+      rdfs:comment "Resource reflecting a conceptual essence of a cataloging resource."@en , "Deze entiteit weerspiegelt de conceptuele essentie van een te catalogeren creatief werk."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/catalog> ;
+      rdfs:label "Work"@en , "Titel"@nl ;
+      rdfs:subClassOf schema:CreativeWork .
+
+schema:audience
+      a       rdf:Property ;
+      rdfs:label "doelgroep"@nl .
+
+schema:volumeNumber
+      a       rdf:Property ;
+      rdfs:label "volume nummer"@nl .
+
+<https://bib.schema.org/translationOfWork>
+      a       rdf:Property ;
+      rdfs:label "vertaling van"@nl .
+
+<https://schema.org/BookFormatType>
+      a       rdfs:Class ;
+      rdfs:label "Boek formaat"@nl .
+
+<https://schema.org/Language>
+      a       rdfs:Class ;
+      rdfs:label "Taal"@nl .

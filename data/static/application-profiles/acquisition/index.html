@@ -1,0 +1,1604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xml:lang="nl" lang="nl" dir="ltr" typeof="bibo:Document " about="" property="dcterms:language" content="nl" prefix="dcterms: http://purl.org/dc/terms/ bibo: http://purl.org/ontology/bibo/ schema: http://schema.org/ w3p: http://www.w3.org/2001/02pd/rec54#" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+              
+  <title>Luisterpunt Acquisition AP</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="https://www.luisterpunt.be/themes/custom/luisterpunt/favicon.ico" type="image/vnd.microsoft.icon" />
+  <style type="text/css">
+  <!--
+/*
+ * I add this to html files generated with pandoc.
+ */
+
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+.logo {
+   height: 200px;
+   background-color: #007a9c;
+ }
+body {
+  color: #444;
+  font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+  font-size: 12px;
+  line-height: 1.7;
+  padding: 1em;
+  margin: auto ;
+  margin-left: 1em;
+  max-width: 50em;
+  background: #fefefe;
+}
+
+a {
+  color:  #007a9c;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #0b0080;
+}
+
+a:hover {
+  color: #06e;
+}
+
+a:active {
+  color: #faa700;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+*::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #000;
+}
+
+*::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #000;
+}
+
+a::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+}
+
+a::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+}
+
+p {
+  margin: 1em 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+  line-height: 125%;
+  margin-top: 2em;
+  font-weight: normal;
+}
+
+h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.9em;
+}
+
+blockquote {
+  color: #666666;
+  margin: 0;
+  padding-left: 3em;
+  border-left: 0.5em #EEE solid;
+}
+
+hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #eee;
+  margin: 1em 0;
+  padding: 0;
+}
+
+pre, code, kbd, samp {
+  color: #000;
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 0.98em;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 2em;
+}
+
+li p:last-child {
+  margin-bottom: 0;
+}
+
+ul ul, ol ol {
+  margin: .3em 0;
+}
+
+dl {
+  margin-bottom: 1em;
+}
+
+dt {
+  font-weight: bold;
+  margin-bottom: .8em;
+}
+
+dd {
+  margin: 0 0 .8em 2em;
+}
+
+dd:last-child {
+  margin-bottom: 0;
+}
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+figure {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+figure img {
+  border: none;
+  margin: 0 auto;
+}
+
+figcaption {
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 0 0 .8em;
+}
+
+table {
+  margin-bottom: 2em;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table th {
+  padding: .2em 1em;
+  background-color: #eee;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+table td {
+  padding: .2em 1em;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.author {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+@media only screen and (min-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    max-width: 100%;
+  }
+
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  hr {
+    height: 1px;
+    border: 0;
+    border-bottom: 1px solid black;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  pre, blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page :left {
+    margin: 15mm 20mm 15mm 10mm;
+}
+
+  @page :right {
+    margin: 15mm 10mm 15mm 20mm;
+}
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}  -->
+  </style>
+</head>
+
+<body>
+
+  <!-- Start page content -->
+  <div class="logo">
+  <img src="https://luisterpunt.be/themes/custom/luisterpunt/images/logo.svg" alt="Logo luisterpunt">
+  </div>
+    <div class="page">
+      <div class="region">
+        <div class="layout layout--wide">
+          <div class="grid u-hr">
+            <div class="col--9-12 col--1-1--s">
+              <h1 class="h1">Luisterpunt Acquisition AP</h1>
+              <div class="head" role="contentinfo" id="respecHeader">
+                <dl>
+                  <dt>Laatste aanpassing</dt>
+                  <dd>2019-09-25</dd>
+
+                  
+                  
+
+                  
+                  
+
+                  
+                  
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="main" itemprop="mainContentOfPage" role="main" tabindex="-1" class="main-content">
+      <div class="layout layout--wide">
+        <div class="grid">
+          <div class="col--8-12 col--12-12--s">
+            <div class="region" id="introduction">
+              <div class="introduction typography">
+              
+                <p>Dit document beschrijft een <strong>applicatieprofiel</strong>, in dit geval <strong>Luisterpunt Acquisition AP</strong>.
+                </p>
+              
+              </div>
+            </div>
+
+            <div class="region region--no-space-top typography" id="summary">
+                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Samenvatting</h2>
+                
+                
+            </div>
+
+            <div class="region region--no-space-top typography" id="status">
+              <section class="introductory" id="sotd" typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter">
+                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Status van dit document</h2>
+                
+                <p>
+                  Dit applicatieprofiel dient om het specifieke gebruik van de entiteiten relevant voor de beschreven applicatie te verduidelijken.
+                </p>
+                
+              </section>
+            </div>
+
+            <div class="region region--no-space-top" id="overview">
+              <h2 class="h2">Overzicht</h2>
+              <div class="grid">
+                <div class="col--9-12 col--1-1--s typography">
+                  
+                  
+                  
+                  <div class="region region--no-space-top">
+                    <p>In dit document wordt correct gebruik van de volgende entiteiten toegelicht:
+                      <br />
+                      |
+                      <a href="#Agent">Agent</a> |
+                      <a href="#Annulering">Annulering</a> |
+                      <a href="#Bronbestand">Bronbestand</a> |
+                      <a href="#Externe verwerving">Externe verwerving</a> |
+                      <a href="#Instantie">Instantie</a> |
+                      <a href="#Item">Item</a> |
+                      <a href="#Medewerker">Medewerker</a> |
+                      <a href="#Organisatie">Organisatie</a> |
+                      <a href="#Persoon">Persoon</a> |
+                      <a href="#Productie aanvraag">Productie aanvraag</a> |
+                      <a href="#Productie levering">Productie levering</a> |
+                      <a href="#Titel selectie">Titel selectie</a> |
+                      <a href="#Zwartdrukboek bestelling">Zwartdrukboek bestelling</a> |
+                      <a href="#Zwartdrukboek levering">Zwartdrukboek levering</a> |
+                    </p>
+                  </div>
+                  
+                  
+                </div>
+              </div>
+            </div>
+            <div class="region region--no-space-top">
+              <a href="img/acquisition.jpg" target="_blank">
+                 <img src="img/acquisition.jpg" />
+              </a>
+            </div>
+            <div class="region region--no-space-top">
+              <h2 class="h2">Entiteiten</h2>
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Agent"><a href="http://luisterpunt.data.gift/vocabularies/core/Agent" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/core/Agent" data-placement="right">Agent</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>    Iemand die of iets dat kan handelen of een effect kan teweeg brengen.</dd>
+                    
+                    <dt>Gebruik</dt><dd>Een agent is in het luisterpunt model een organisatie of een persoon.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Agent%3Acontact%20informatie">contact informatie</a>, 
+                      <a href="#Agent%3Anaam">naam</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Agent%3Acontact%20informatie" typeof="rdfs:Property" resource="http://schema.org/contactPoint">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/contactPoint" data-toggle="tooltip" data-content="http://schema.org/contactPoint" data-placement="right">
+                            contact informatie</a>
+                          </code>
+                        </td>
+                        <td><a href="http://fixme.com#ContactInfo" data-toggle="tooltip" data-content="http://fixme.com#ContactInfo" data-placement="right">ContactInfo</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Agent%3Anaam" typeof="rdfs:Property" resource="http://schema.org/name">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/name" data-toggle="tooltip" data-content="http://schema.org/name" data-placement="right">
+                            naam</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Naam waarmee de agent bij voorkeur wordt aangeduid.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Annulering"><a href="http://luisterpunt.data.gift/vocabularies/acquisition/Cancellation" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/Cancellation" data-placement="right">Annulering</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Opheffing van een actie, zoals een bestelling.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Annulering%3Abeschrijving">beschrijving</a>, 
+                      <a href="#Annulering%3Acreatie%20datum">creatie datum</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Annulering%3Abeschrijving" typeof="rdfs:Property" resource="http://schema.org/description">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/description" data-toggle="tooltip" data-content="http://schema.org/description" data-placement="right">
+                            beschrijving</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">beschrijving of bijkomende informatie van de annulering.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Annulering%3Acreatie%20datum" typeof="rdfs:Property" resource="http://schema.org/dateCreated">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/dateCreated" data-toggle="tooltip" data-content="http://schema.org/dateCreated" data-placement="right">
+                            creatie datum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">datum van annulering</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Bronbestand"><a href="http://luisterpunt.data.gift/vocabularies/acquisition/Sourcefile" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/Sourcefile" data-placement="right">Bronbestand</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Een bronbestand bevat (een deel) van) een creatief werk in een geencodeerde vorm.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Bronbestand%3Abestandsgrootte">bestandsgrootte</a>, 
+                      <a href="#Bronbestand%3Acodering">codering</a>, 
+                      <a href="#Bronbestand%3Acreatie%20datum">creatie datum</a>, 
+                      <a href="#Bronbestand%3Anaam">naam</a>, 
+                      <a href="#Bronbestand%3Apositie">positie</a>, 
+                      <a href="#Bronbestand%3Aproducent">producent</a>, 
+                      <a href="#Bronbestand%3Awijzigingsdatum">wijzigingsdatum</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Bronbestand%3Abestandsgrootte" typeof="rdfs:Property" resource="http://schema.org/contentSize">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/contentSize" data-toggle="tooltip" data-content="http://schema.org/contentSize" data-placement="right">
+                            bestandsgrootte</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">QuantativeValue</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De grootte van het bestand uitgedrukt in een aantal en een eenheid.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Bronbestand%3Acodering" typeof="rdfs:Property" resource="http://schema.org/encodingFormat">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/encodingFormat" data-toggle="tooltip" data-content="http://schema.org/encodingFormat" data-placement="right">
+                            codering</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/catalog/Format" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/catalog/Format" data-placement="right">Format</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Formaat waarin het werk werd gecodeerd.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Bronbestand%3Acreatie%20datum" typeof="rdfs:Property" resource="http://schema.org/dateCreated">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/dateCreated" data-toggle="tooltip" data-content="http://schema.org/dateCreated" data-placement="right">
+                            creatie datum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Datum waarop het bestand voor het eerst werd weggeschreven.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Bronbestand%3Anaam" typeof="rdfs:Property" resource="http://schema.org/name">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/name" data-toggle="tooltip" data-content="http://schema.org/name" data-placement="right">
+                            naam</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">een beschrijvende naam voor het bestand, eventueel de bestandsnaam.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Bronbestand%3Apositie" typeof="rdfs:Property" resource="http://schema.org/position">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/position" data-toggle="tooltip" data-content="http://schema.org/position" data-placement="right">
+                            positie</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">Number</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De positie van het bronbestand in een reeks van bronbestanden.</td>
+                        <td property="vann:usageNote">Duidt de volgorde aan indien een werk bestaat uit meerdere bronbestanden.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Bronbestand%3Aproducent" typeof="rdfs:Property" resource="http://schema.org/creator">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/creator" data-toggle="tooltip" data-content="http://schema.org/creator" data-placement="right">
+                            producent</a>
+                          </code>
+                        </td>
+                        <td><a href="http://schema.org/Organization" data-toggle="tooltip" data-content="http://schema.org/Organization" data-placement="right">Organisation</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">De orginastie die het bronbestand heeft geproduceerd.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Bronbestand%3Awijzigingsdatum" typeof="rdfs:Property" resource="http://schema.org/dateModified">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/dateModified" data-toggle="tooltip" data-content="http://schema.org/dateModified" data-placement="right">
+                            wijzigingsdatum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">laatste datum waarop het bestand werd gewijzigd</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Externe verwerving"><a href="http://luisterpunt.data.gift/vocabularies/acquisition/ExternalWorkAcquisition" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/ExternalWorkAcquisition" data-placement="right">Externe verwerving</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Verzoek tot verkrijgen van een bronbestand van een toegankelijk werk dat reeds beschikbaar is bij een externe partner.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Externe%20verwerving%3Acreatie%20datum">creatie datum</a>, 
+                      <a href="#Externe%20verwerving%3Apublicatie%20formaat">publicatie formaat</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Externe%20verwerving%3Acreatie%20datum" typeof="rdfs:Property" resource="http://schema.org/dateCreated">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/dateCreated" data-toggle="tooltip" data-content="http://schema.org/dateCreated" data-placement="right">
+                            creatie datum</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">dateTime</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Datum waarop het verzoek werd aangemaakt.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Externe%20verwerving%3Apublicatie%20formaat" typeof="rdfs:Property" resource="http://luisterpunt.data.gift/vocabularies/acquisition/bookFormat">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://luisterpunt.data.gift/vocabularies/acquisition/bookFormat" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/bookFormat" data-placement="right">
+                            publicatie formaat</a>
+                          </code>
+                        </td>
+                        <td><a href="https://schema.org/BookFormatType" data-toggle="tooltip" data-content="https://schema.org/BookFormatType" data-placement="right">BookFormatType</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Het gewenste publicatieformaat van het werk.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Instantie"><a href="http://luisterpunt.data.gift/vocabularies/offer/Instance" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/offer/Instance" data-placement="right">Instantie</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Deze entiteit beschrijft een individuele, materiële belichaming van een werk.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Instantie%3Aidentificator">identificator</a>, 
+                      <a href="#Instantie%3Aisbn">isbn</a>, 
+                      <a href="#Instantie%3Aluisterpunt%20id">luisterpunt id</a>, 
+                      <a href="#Instantie%3Amateri%C3%ABle%20omvang">materiële omvang</a>, 
+                      <a href="#Instantie%3Apublicatie%20datum">publicatie datum</a>, 
+                      <a href="#Instantie%3Apublicatie%20formaat">publicatie formaat</a>, 
+                      <a href="#Instantie%3Aspeelduur">speelduur</a>, 
+                      <a href="#Instantie%3Atoegankelijkheids%20eigenschap">toegankelijkheids eigenschap</a>, 
+                      <a href="#Instantie%3Auitgave">uitgave</a>, 
+                      <a href="#Instantie%3Avlacc%20nummer">vlacc nummer</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Instantie%3Aidentificator" typeof="rdfs:Property" resource="http://schema.org/identifier">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/identifier" data-toggle="tooltip" data-content="http://schema.org/identifier" data-placement="right">
+                            identificator</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">String gebruikt om het object uniek te identificeren </td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Instantie%3Aisbn" typeof="rdfs:Property" resource="http://schema.org/isbn">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/isbn" data-toggle="tooltip" data-content="http://schema.org/isbn" data-placement="right">
+                            isbn</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">ISBN van het boek</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Instantie%3Aluisterpunt%20id" typeof="rdfs:Property" resource="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntId">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntId" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntId" data-placement="right">
+                            luisterpunt id</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Identificator die bij luisterpunt aan een titel wordt gegeven.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Instantie%3Amateri%C3%ABle%20omvang" typeof="rdfs:Property" resource="http://schema.org/materialExtent">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/materialExtent" data-toggle="tooltip" data-content="http://schema.org/materialExtent" data-placement="right">
+                            materiële omvang</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">QuantativeValue</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Verwijst naar het aantal fysieke onderdelen dat het werk omvat</td>
+                        <td property="vann:usageNote">Voorbeeld een quantative value met eenheid &#39;CD&#39; en aantal &#39;2&#39;</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Instantie%3Apublicatie%20datum" typeof="rdfs:Property" resource="http://schema.org/datePublished">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/datePublished" data-toggle="tooltip" data-content="http://schema.org/datePublished" data-placement="right">
+                            publicatie datum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Datum waarop voor het eerst openbaar gemaakt.</td>
+                        <td property="vann:usageNote">aanwinst datum</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Instantie%3Apublicatie%20formaat" typeof="rdfs:Property" resource="http://schema.org/bookFormat">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/bookFormat" data-toggle="tooltip" data-content="http://schema.org/bookFormat" data-placement="right">
+                            publicatie formaat</a>
+                          </code>
+                        </td>
+                        <td><a href="https://schema.org/BookFormatType" data-toggle="tooltip" data-content="https://schema.org/BookFormatType" data-placement="right">BookFormatType</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Het publicatieformaat van het boek.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Instantie%3Aspeelduur" typeof="rdfs:Property" resource="http://schema.org/duration">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/duration" data-toggle="tooltip" data-content="http://schema.org/duration" data-placement="right">
+                            speelduur</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#duration" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#duration" data-placement="right">Duration</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">De speelduur van het item (film, audio-opname, evenement, etc.) in ISO 8601-datumformaat.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Instantie%3Atoegankelijkheids%20eigenschap" typeof="rdfs:Property" resource="http://schema.org/accessibilityFeature">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/accessibilityFeature" data-toggle="tooltip" data-content="http://schema.org/accessibilityFeature" data-placement="right">
+                            toegankelijkheids eigenschap</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/catalog/AccessibilityFeature" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/catalog/AccessibilityFeature" data-placement="right">AccessibilityFeature</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">Voorziening in de weergave van het werk in functie van toegankelijkheid.</td>
+                        <td property="vann:usageNote">zie https://www.w3.org/wiki/WebSchemas/Accessibility</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Instantie%3Auitgave" typeof="rdfs:Property" resource="http://schema.org/bookEdition">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/bookEdition" data-toggle="tooltip" data-content="http://schema.org/bookEdition" data-placement="right">
+                            uitgave</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">Een specifieke uitgave van een boek</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Instantie%3Avlacc%20nummer" typeof="rdfs:Property" resource="http://luisterpunt.data.gift/vocabularies/offer/vlaccId">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://luisterpunt.data.gift/vocabularies/offer/vlaccId" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/offer/vlaccId" data-placement="right">
+                            vlacc nummer</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">Identificatienummer in de Vlaamse Centrale Catalogus.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Item"><a href="http://luisterpunt.data.gift/vocabularies/loans/Item" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/loans/Item" data-placement="right">Item</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Eén specifiek voorbeeld van een instance.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn geen eigenschappen gedefinieerd.</dd>
+                    
+                  </dl>
+                </div>
+                
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Medewerker"><a href="http://luisterpunt.data.gift/vocabularies/core/Medewerker" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/core/Medewerker" data-placement="right">Medewerker</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Een medewerker binnen de organisatie</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn geen eigenschappen gedefinieerd.</dd>
+                    
+                  </dl>
+                </div>
+                
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Organisatie"><a href="http://schema.org/Organization" data-toggle="tooltip" data-content="http://schema.org/Organization" data-placement="right">Organisatie</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Een aantal mensen georganiseerd in een gemeenschap of andere sociale, commerciële of politieke structuur. De groep heeft een gemeenschappelijk doel of bestaansreden die de individuele leden ervan overstijgt en kan handelen als agent. </dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn geen eigenschappen gedefinieerd.</dd>
+                    
+                  </dl>
+                </div>
+                
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Persoon"><a href="http://schema.org/Person" data-toggle="tooltip" data-content="http://schema.org/Person" data-placement="right">Persoon</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Een persoon (levend, overleden of fictief).</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Persoon%3Adatum%20van%20overlijden">datum van overlijden</a>, 
+                      <a href="#Persoon%3Afamilienaam">familienaam</a>, 
+                      <a href="#Persoon%3Ageboortedatum">geboortedatum</a>, 
+                      <a href="#Persoon%3Ageslacht">geslacht</a>, 
+                      <a href="#Persoon%3Ahetzelfde%20als">hetzelfde als</a>, 
+                      <a href="#Persoon%3Avoornaam">voornaam</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Persoon%3Adatum%20van%20overlijden" typeof="rdfs:Property" resource="http://schema.org/deathDate">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/deathDate" data-toggle="tooltip" data-content="http://schema.org/deathDate" data-placement="right">
+                            datum van overlijden</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">Datum van overlijden.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Persoon%3Afamilienaam" typeof="rdfs:Property" resource="http://schema.org/familyName">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/familyName" data-toggle="tooltip" data-content="http://schema.org/familyName" data-placement="right">
+                            familienaam</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">familienaam</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Persoon%3Ageboortedatum" typeof="rdfs:Property" resource="http://schema.org/birthDate">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/birthDate" data-toggle="tooltip" data-content="http://schema.org/birthDate" data-placement="right">
+                            geboortedatum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">geboortedatum</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Persoon%3Ageslacht" typeof="rdfs:Property" resource="http://schema.org/gender">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/gender" data-toggle="tooltip" data-content="http://schema.org/gender" data-placement="right">
+                            geslacht</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">GenderType</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">geslacht</td>
+                        <td property="vann:usageNote">Op dit moment enkel http://schema.org/Male en  http://schema.org/Female</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Persoon%3Ahetzelfde%20als" typeof="rdfs:Property" resource="http://schema.org/sameAs">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/sameAs" data-toggle="tooltip" data-content="http://schema.org/sameAs" data-placement="right">
+                            hetzelfde als</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">Resource</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Aanduiding van een relatie met een identieke entiteit.</td>
+                        <td property="vann:usageNote">gebruik om te verwijzen naar een entiteit uit viaf of vlacc.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Persoon%3Avoornaam" typeof="rdfs:Property" resource="http://schema.org/givenName">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/givenName" data-toggle="tooltip" data-content="http://schema.org/givenName" data-placement="right">
+                            voornaam</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">voornaam</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Productie aanvraag"><a href="http://luisterpunt.data.gift/vocabularies/acquisition/ProductionRequest" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/ProductionRequest" data-placement="right">Productie aanvraag</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>De bestelling van de productie van een toegankelijk werk bij een producten.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Productie%20aanvraag%3Acreatie%20datum">creatie datum</a>, 
+                      <a href="#Productie%20aanvraag%3Aprioriteit">prioriteit</a>, 
+                      <a href="#Productie%20aanvraag%3Aproducent">producent</a>, 
+                      <a href="#Productie%20aanvraag%3Apublicatie%20formaat">publicatie formaat</a>, 
+                      <a href="#Productie%20aanvraag%3Astem%20voorkeur">stem voorkeur</a>, 
+                      <a href="#Productie%20aanvraag%3Awerd%20ge%C3%AFnvalideerd%20door.">werd geïnvalideerd door.</a>, 
+                      <a href="#Productie%20aanvraag%3AWijzigingsdatum">Wijzigingsdatum</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Productie%20aanvraag%3Acreatie%20datum" typeof="rdfs:Property" resource="http://schema.org/dateCreated">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/dateCreated" data-toggle="tooltip" data-content="http://schema.org/dateCreated" data-placement="right">
+                            creatie datum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Datum waarop het productieverzoek werd aangemaakt.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Productie%20aanvraag%3Aprioriteit" typeof="rdfs:Property" resource="http://luisterpunt.data.gift/vocabularies/acquisition/priority">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://luisterpunt.data.gift/vocabularies/acquisition/priority" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/priority" data-placement="right">
+                            prioriteit</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">Code</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Prioriteit die aan het productieverzoek moet worden gegeven.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Productie%20aanvraag%3Aproducent" typeof="rdfs:Property" resource="http://schema.org/seller">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/seller" data-toggle="tooltip" data-content="http://schema.org/seller" data-placement="right">
+                            producent</a>
+                          </code>
+                        </td>
+                        <td><a href="http://schema.org/Organization" data-toggle="tooltip" data-content="http://schema.org/Organization" data-placement="right">Organisation</a></td>
+                        <td>1...*</td>
+                        <td property="rdfs:comment">De organisatie bij wie het werk wordt geproduceerd.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Productie%20aanvraag%3Apublicatie%20formaat" typeof="rdfs:Property" resource="http://luisterpunt.data.gift/vocabularies/acquisition/bookFormat">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://luisterpunt.data.gift/vocabularies/acquisition/bookFormat" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/bookFormat" data-placement="right">
+                            publicatie formaat</a>
+                          </code>
+                        </td>
+                        <td><a href="https://schema.org/BookFormatType" data-toggle="tooltip" data-content="https://schema.org/BookFormatType" data-placement="right">BookFormatType</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Het gewenste publicatieformaat van het werk.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Productie%20aanvraag%3Astem%20voorkeur" typeof="rdfs:Property" resource="http://luisterpunt.data.gift/vocabularies/acquisition/voicePreference">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://luisterpunt.data.gift/vocabularies/acquisition/voicePreference" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/voicePreference" data-placement="right">
+                            stem voorkeur</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">Code</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Man en/of vrouw, Vlaams of Nederlands.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Productie%20aanvraag%3Awerd%20ge%C3%AFnvalideerd%20door." typeof="rdfs:Property" resource="https://www.w3.org/ns/prov#wasInvalidatedBy">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://www.w3.org/ns/prov#wasInvalidatedBy" data-toggle="tooltip" data-content="https://www.w3.org/ns/prov#wasInvalidatedBy" data-placement="right">
+                            werd geïnvalideerd door.</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/acquisition/Cancellation" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/Cancellation" data-placement="right">Cancellation</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">verwijst naar de annulatie van deze productieaanvraag.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Productie%20aanvraag%3AWijzigingsdatum" typeof="rdfs:Property" resource="http://schema.org/dateModified">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/dateModified" data-toggle="tooltip" data-content="http://schema.org/dateModified" data-placement="right">
+                            Wijzigingsdatum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Laatste datum waarop de aanvraag werd gewijzigd.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Productie levering"><a href="http://luisterpunt.data.gift/vocabularies/acquisition/ProductionDelivery" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/ProductionDelivery" data-placement="right">Productie levering</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>De aanlevering van bronbestanden als gevolg van een bestelling.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Productie%20levering%3Adeel%20van%20bestelling">deel van bestelling</a>, 
+                      <a href="#Productie%20levering%3Adeel%20van%20bestelling">deel van bestelling</a>, 
+                      <a href="#Productie%20levering%3Averzonden%20bestanden">verzonden bestanden</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Productie%20levering%3Adeel%20van%20bestelling" typeof="rdfs:Property" resource="http://schema.org/partOfOrder">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/partOfOrder" data-toggle="tooltip" data-content="http://schema.org/partOfOrder" data-placement="right">
+                            deel van bestelling</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/acquisition/ProductionRequest" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/ProductionRequest" data-placement="right">ProductionRequest</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De productie aanvraag waartoe deze levering behoort.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Productie%20levering%3Adeel%20van%20bestelling" typeof="rdfs:Property" resource="http://schema.org/partOfOrder">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/partOfOrder" data-toggle="tooltip" data-content="http://schema.org/partOfOrder" data-placement="right">
+                            deel van bestelling</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/acquisition/ExternalWorkAcquisition" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/ExternalWorkAcquisition" data-placement="right">ExternalWorkAcquisition</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">De externe  aanvraag waartoe deze levering behoort.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Productie%20levering%3Averzonden%20bestanden" typeof="rdfs:Property" resource="http://schema.org/itemShipped">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/itemShipped" data-toggle="tooltip" data-content="http://schema.org/itemShipped" data-placement="right">
+                            verzonden bestanden</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/acquisition/Sourcefile" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/Sourcefile" data-placement="right">Sourcefile</a></td>
+                        <td>1...*</td>
+                        <td property="rdfs:comment">De bronbestanden die werden aangeleverd in deze levering.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Titel selectie"><a href="http://luisterpunt.data.gift/vocabularies/acquisition/WorkSelection" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/WorkSelection" data-placement="right">Titel selectie</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Selectie van een titel.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Titel%20selectie%3Awerd%20geassocieerd%20met">werd geassocieerd met</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Titel%20selectie%3Awerd%20geassocieerd%20met" typeof="rdfs:Property" resource="https://www.w3.org/ns/prov#wasAttributedTo">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://www.w3.org/ns/prov#wasAttributedTo" data-toggle="tooltip" data-content="https://www.w3.org/ns/prov#wasAttributedTo" data-placement="right">
+                            werd geassocieerd met</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/core/Medewerker" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/core/Medewerker" data-placement="right">Medewerker</a></td>
+                        <td>1...*</td>
+                        <td property="rdfs:comment">De medewerker die deze selectie heeft aangemaakt.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Zwartdrukboek bestelling"><a href="http://luisterpunt.data.gift/vocabularies/acquisition/SourceBookAcquisition" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/SourceBookAcquisition" data-placement="right">Zwartdrukboek bestelling</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Bestelling of opvraging van een zwartdrukboek.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Zwartdrukboek%20bestelling%3Aaanbieder">aanbieder</a>, 
+                      <a href="#Zwartdrukboek%20bestelling%3Abesteld%20artikel">besteld artikel</a>, 
+                      <a href="#Zwartdrukboek%20bestelling%3Abestelt%20door">bestelt door</a>, 
+                      <a href="#Zwartdrukboek%20bestelling%3Acreatie%20datum">creatie datum</a>, 
+                      <a href="#Zwartdrukboek%20bestelling%3Ais%20gebaseerd%20op">is gebaseerd op</a>, 
+                      <a href="#Zwartdrukboek%20bestelling%3Awerd%20ge%C3%AFnvalideerd%20door">werd geïnvalideerd door</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Zwartdrukboek%20bestelling%3Aaanbieder" typeof="rdfs:Property" resource="http://schema.org/seller">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/seller" data-toggle="tooltip" data-content="http://schema.org/seller" data-placement="right">
+                            aanbieder</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/core/Agent" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/core/Agent" data-placement="right">Agent</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">De persoon of organisatie bij wie het boek wordt verkregen.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Zwartdrukboek%20bestelling%3Abesteld%20artikel" typeof="rdfs:Property" resource="http://schema.org/orderedItem">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/orderedItem" data-toggle="tooltip" data-content="http://schema.org/orderedItem" data-placement="right">
+                            besteld artikel</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/offer/Instance" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/offer/Instance" data-placement="right">Instance</a></td>
+                        <td>1...*</td>
+                        <td property="rdfs:comment">Verwijst naar het werk dat men met deze bestelling wil verkrijgen.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Zwartdrukboek%20bestelling%3Abestelt%20door" typeof="rdfs:Property" resource="https://www.w3.org/ns/prov#wasAssociatedWith">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://www.w3.org/ns/prov#wasAssociatedWith" data-toggle="tooltip" data-content="https://www.w3.org/ns/prov#wasAssociatedWith" data-placement="right">
+                            bestelt door</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/core/Medewerker" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/core/Medewerker" data-placement="right">Medewerker</a></td>
+                        <td></td>
+                        <td property="rdfs:comment">De medewerker die de bestelling plaatste.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Zwartdrukboek%20bestelling%3Acreatie%20datum" typeof="rdfs:Property" resource="http://schema.org/dateCreated">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/dateCreated" data-toggle="tooltip" data-content="http://schema.org/dateCreated" data-placement="right">
+                            creatie datum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Datum waarop het zwartdrukboek werd besteld.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Zwartdrukboek%20bestelling%3Ais%20gebaseerd%20op" typeof="rdfs:Property" resource="https://www.w3.org/ns/prov#wasDerivedFrom">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://www.w3.org/ns/prov#wasDerivedFrom" data-toggle="tooltip" data-content="https://www.w3.org/ns/prov#wasDerivedFrom" data-placement="right">
+                            is gebaseerd op</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/acquisition/WorkSelection" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/WorkSelection" data-placement="right">WorkSelection</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">de werk selectie waar deze bestelling voor werd geplaatst.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Zwartdrukboek%20bestelling%3Awerd%20ge%C3%AFnvalideerd%20door" typeof="rdfs:Property" resource="https://www.w3.org/ns/prov#wasInvalidatedBy">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://www.w3.org/ns/prov#wasInvalidatedBy" data-toggle="tooltip" data-content="https://www.w3.org/ns/prov#wasInvalidatedBy" data-placement="right">
+                            werd geïnvalideerd door</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/acquisition/Cancellation" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/Cancellation" data-placement="right">Cancellation</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">verwijst naar de annulatie van de zwart druk bestelling.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Zwartdrukboek levering"><a href="http://luisterpunt.data.gift/vocabularies/acquisition/SourceBookDelivery" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/SourceBookDelivery" data-placement="right">Zwartdrukboek levering</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>De levering van een zwartdrukboek, volgend op een bestelling.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Zwartdrukboek%20levering%3Aaangeleverd%20werk">aangeleverd werk</a>, 
+                      <a href="#Zwartdrukboek%20levering%3Adeel%20van%20bestelling">deel van bestelling</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Zwartdrukboek%20levering%3Aaangeleverd%20werk" typeof="rdfs:Property" resource="http://schema.org/itemShipped">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/itemShipped" data-toggle="tooltip" data-content="http://schema.org/itemShipped" data-placement="right">
+                            aangeleverd werk</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/loans/Item" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/loans/Item" data-placement="right">Item</a></td>
+                        <td></td>
+                        <td property="rdfs:comment">Het werk dat werd aangeleverd.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Zwartdrukboek%20levering%3Adeel%20van%20bestelling" typeof="rdfs:Property" resource="http://schema.org/partOfOrder">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/partOfOrder" data-toggle="tooltip" data-content="http://schema.org/partOfOrder" data-placement="right">
+                            deel van bestelling</a>
+                          </code>
+                        </td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/acquisition/SourceBookAcquisition" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/SourceBookAcquisition" data-placement="right">SourceBookAcquisition</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Aanvraag of bestelling waar deze levering een deel van uitmaakt.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+
+            
+          </div>
+    <!-- End page content -->
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

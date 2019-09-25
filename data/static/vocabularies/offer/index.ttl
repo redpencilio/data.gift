@@ -1,0 +1,94 @@
+@prefix schema:  <http://schema.org/> .
+@prefix eli:     <http://data.europa.eu/eli/ontology#> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix besluit:  <http://data.vlaanderen.be/ns/besluit#> .
+@prefix sat:     <http://data.europa.eu/stateaidtransparency/sat#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eu:      <http://data.europa.eu/m8g/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix person:  <http://www.w3.org/ns/person#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix locn:    <http://www.w3.org/ns/locn#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix cpsv:    <http://purl.org/vocab/cpsv#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+<http://luisterpunt.data.gift/vocabularies/offer>
+      a       owl:Ontology ;
+      rdfs:label "Luisterpunt - aanbod"@nl , "Luisterpunt - Offer"@en ;
+      dcterms:issued "2019-09-27"^^xsd:date ;
+      dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+      dcterms:title "Luisterpunt - aanbod"@nl , "Luisterpunt - Offer"@en ;
+      vann:preferredNamespaceUri
+              "http://luisterpunt.data.gift/vocabularies/offer" .
+
+<http://luisterpunt.data.gift/vocabularies/offer/Loan>
+      a       owl:Class ;
+      rdfs:comment "Aanbieding die het tijdelijke recht op gebruik van de opgegeven producten geeft."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/offer> ;
+      rdfs:label "Uitlening"@nl ;
+      rdfs:subClassOf schema:Offer .
+
+<http://luisterpunt.data.gift/vocabularies/offer/Subscription>
+      a       owl:Class ;
+      rdfs:comment "Een aanbieding voor een werk dat met regelmatige tussenposen wordt gepubliceerd."@nl ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/offer> ;
+      rdfs:label "Abonnement"@nl ;
+      rdfs:subClassOf schema:Offer .
+
+schema:ContactPoint
+      a       rdfs:Class .
+
+schema:Offer
+      a       rdfs:Class ;
+      rdfs:label "Aanbod"@nl .
+
+schema:availability
+      a       rdf:Property ;
+      rdfs:label "beschikbaarheid"@nl .
+
+schema:availabilityStarts
+      a       rdf:Property ;
+      rdfs:label "beschikbaar vanaf"@nl .
+
+schema:businessFunction
+      a       rdf:Property .
+
+schema:description
+      a       rdf:Property ;
+      rdfs:label "beschrijving"@nl .
+
+schema:duration
+      a       rdf:Property .
+
+schema:eligibleCustomerType
+      a       rdf:Property .
+
+schema:email
+      a       rdf:Property ;
+      rdfs:label "email"@nl .
+
+schema:name
+      a       rdf:Property ;
+      rdfs:label "naam"@nl .
+
+schema:telephone
+      a       rdf:Property ;
+      rdfs:label "telefoon"@nl .
+
+schema:url
+      a       rdf:Property ;
+      rdfs:label "url"@nl .
+
+schema:validFrom
+      a       rdf:Property ;
+      rdfs:label "geldig van"@nl .
+
+schema:validThrough
+      a       rdf:Property ;
+      rdfs:label "geldig tot"@nl .

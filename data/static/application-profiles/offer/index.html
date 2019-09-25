@@ -1,0 +1,835 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xml:lang="nl" lang="nl" dir="ltr" typeof="bibo:Document " about="" property="dcterms:language" content="nl" prefix="dcterms: http://purl.org/dc/terms/ bibo: http://purl.org/ontology/bibo/ schema: http://schema.org/ w3p: http://www.w3.org/2001/02pd/rec54#" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+              
+  <title>Luisterpunt Offer AP</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="https://www.luisterpunt.be/themes/custom/luisterpunt/favicon.ico" type="image/vnd.microsoft.icon" />
+  <style type="text/css">
+  <!--
+/*
+ * I add this to html files generated with pandoc.
+ */
+
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+.logo {
+   height: 200px;
+   background-color: #007a9c;
+ }
+body {
+  color: #444;
+  font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+  font-size: 12px;
+  line-height: 1.7;
+  padding: 1em;
+  margin: auto ;
+  margin-left: 1em;
+  max-width: 50em;
+  background: #fefefe;
+}
+
+a {
+  color:  #007a9c;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #0b0080;
+}
+
+a:hover {
+  color: #06e;
+}
+
+a:active {
+  color: #faa700;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+*::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #000;
+}
+
+*::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #000;
+}
+
+a::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+}
+
+a::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+}
+
+p {
+  margin: 1em 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+  line-height: 125%;
+  margin-top: 2em;
+  font-weight: normal;
+}
+
+h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.9em;
+}
+
+blockquote {
+  color: #666666;
+  margin: 0;
+  padding-left: 3em;
+  border-left: 0.5em #EEE solid;
+}
+
+hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #eee;
+  margin: 1em 0;
+  padding: 0;
+}
+
+pre, code, kbd, samp {
+  color: #000;
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 0.98em;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 2em;
+}
+
+li p:last-child {
+  margin-bottom: 0;
+}
+
+ul ul, ol ol {
+  margin: .3em 0;
+}
+
+dl {
+  margin-bottom: 1em;
+}
+
+dt {
+  font-weight: bold;
+  margin-bottom: .8em;
+}
+
+dd {
+  margin: 0 0 .8em 2em;
+}
+
+dd:last-child {
+  margin-bottom: 0;
+}
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+figure {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+figure img {
+  border: none;
+  margin: 0 auto;
+}
+
+figcaption {
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 0 0 .8em;
+}
+
+table {
+  margin-bottom: 2em;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table th {
+  padding: .2em 1em;
+  background-color: #eee;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+table td {
+  padding: .2em 1em;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.author {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+@media only screen and (min-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    max-width: 100%;
+  }
+
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  hr {
+    height: 1px;
+    border: 0;
+    border-bottom: 1px solid black;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  pre, blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page :left {
+    margin: 15mm 20mm 15mm 10mm;
+}
+
+  @page :right {
+    margin: 15mm 10mm 15mm 20mm;
+}
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}  -->
+  </style>
+</head>
+
+<body>
+
+  <!-- Start page content -->
+  <div class="logo">
+  <img src="https://luisterpunt.be/themes/custom/luisterpunt/images/logo.svg" alt="Logo luisterpunt">
+  </div>
+    <div class="page">
+      <div class="region">
+        <div class="layout layout--wide">
+          <div class="grid u-hr">
+            <div class="col--9-12 col--1-1--s">
+              <h1 class="h1">Luisterpunt Offer AP</h1>
+              <div class="head" role="contentinfo" id="respecHeader">
+                <dl>
+                  <dt>Laatste aanpassing</dt>
+                  <dd>2019-09-25</dd>
+
+                  
+                  
+
+                  
+                  
+
+                  
+                  
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="main" itemprop="mainContentOfPage" role="main" tabindex="-1" class="main-content">
+      <div class="layout layout--wide">
+        <div class="grid">
+          <div class="col--8-12 col--12-12--s">
+            <div class="region" id="introduction">
+              <div class="introduction typography">
+              
+                <p>Dit document beschrijft een <strong>applicatieprofiel</strong>, in dit geval <strong>Luisterpunt Offer AP</strong>.
+                </p>
+              
+              </div>
+            </div>
+
+            <div class="region region--no-space-top typography" id="summary">
+                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Samenvatting</h2>
+                
+                
+            </div>
+
+            <div class="region region--no-space-top typography" id="status">
+              <section class="introductory" id="sotd" typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter">
+                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Status van dit document</h2>
+                
+                <p>
+                  Dit applicatieprofiel dient om het specifieke gebruik van de entiteiten relevant voor de beschreven applicatie te verduidelijken.
+                </p>
+                
+              </section>
+            </div>
+
+            <div class="region region--no-space-top" id="overview">
+              <h2 class="h2">Overzicht</h2>
+              <div class="grid">
+                <div class="col--9-12 col--1-1--s typography">
+                  
+                  
+                  
+                  <div class="region region--no-space-top">
+                    <p>In dit document wordt correct gebruik van de volgende entiteiten toegelicht:
+                      <br />
+                      |
+                      <a href="#Aanbod">Aanbod</a> |
+                      <a href="#Abonnement">Abonnement</a> |
+                      <a href="#Organisatie">Organisatie</a> |
+                      <a href="#Product">Product</a> |
+                      <a href="#Uitlening">Uitlening</a> |
+                    </p>
+                  </div>
+                  
+                  
+                  <div class="region region--no-space-top">
+                    <p> In dit document worden de volgende datatypes toegelicht:
+                      <br />
+                      |
+                      <a href="#Contact Punt">Contact Punt</a> |
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="region region--no-space-top">
+              <a href="img/offer.jpg" target="_blank">
+                 <img src="img/offer.jpg" />
+              </a>
+            </div>
+            <div class="region region--no-space-top">
+              <h2 class="h2">Entiteiten</h2>
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Aanbod"><a href="http://schema.org/Offer" data-toggle="tooltip" data-content="http://schema.org/Offer" data-placement="right">Aanbod</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Een aanbod om bepaalde rechten op een item over te dragen of om een service te verlenen - bijvoorbeeld een aanbieding om een luisterboek uit te lenen.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Aanbod%3Aaanbod%20type">aanbod type</a>, 
+                      <a href="#Aanbod%3Aaangeboden%20door">aangeboden door</a>, 
+                      <a href="#Aanbod%3Aaangeboden%20item">aangeboden item</a>, 
+                      <a href="#Aanbod%3Abeschikbaar%20vanaf">beschikbaar vanaf</a>, 
+                      <a href="#Aanbod%3Abeschikbaarheid">beschikbaarheid</a>, 
+                      <a href="#Aanbod%3Abeschrijving">beschrijving</a>, 
+                      <a href="#Aanbod%3Ageldig%20tot">geldig tot</a>, 
+                      <a href="#Aanbod%3Ageldig%20van">geldig van</a>, 
+                      <a href="#Aanbod%3Aklant%20type">klant type</a>, 
+                      <a href="#Aanbod%3Anaam">naam</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Aanbod%3Aaanbod%20type" typeof="rdfs:Property" resource="http://schema.org/businessFunction">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/businessFunction" data-toggle="tooltip" data-content="http://schema.org/businessFunction" data-placement="right">
+                            aanbod type</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">BusinessFunction</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Het soort aanbieding, bijvoorbeeld uitlening, verkoop of levering van een dienst.</td>
+                        <td property="vann:usageNote">Zie ook http://www.heppnetz.de/ontologies/goodrelations/v1#BusinessFunction</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Aanbod%3Aaangeboden%20door" typeof="rdfs:Property" resource="http://schema.org/offeredBy">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/offeredBy" data-toggle="tooltip" data-content="http://schema.org/offeredBy" data-placement="right">
+                            aangeboden door</a>
+                          </code>
+                        </td>
+                        <td><a href="http://schema.org/Organization" data-toggle="tooltip" data-content="http://schema.org/Organization" data-placement="right">Organisation</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Verwijst naar de persoon of organisatie die het aanbod voorziet.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Aanbod%3Aaangeboden%20item" typeof="rdfs:Property" resource="http://schema.org/itemOffered">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/itemOffered" data-toggle="tooltip" data-content="http://schema.org/itemOffered" data-placement="right">
+                            aangeboden item</a>
+                          </code>
+                        </td>
+                        <td><a href="http://schema.org/Product" data-toggle="tooltip" data-content="http://schema.org/Product" data-placement="right">Product</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">Verwijst naar wat aangeboden wordt.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Aanbod%3Abeschikbaar%20vanaf" typeof="rdfs:Property" resource="http://schema.org/availabilityStarts">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/availabilityStarts" data-toggle="tooltip" data-content="http://schema.org/availabilityStarts" data-placement="right">
+                            beschikbaar vanaf</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Geeft aan vanaf wanneer het aanbod (product/service) beschikbaar is. </td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Aanbod%3Abeschikbaarheid" typeof="rdfs:Property" resource="http://schema.org/availability">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/availability" data-toggle="tooltip" data-content="http://schema.org/availability" data-placement="right">
+                            beschikbaarheid</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">ItemAvailability</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">de beschikbaarheid van het item</td>
+                        <td property="vann:usageNote">Instock,OutOfStock,Preorder</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Aanbod%3Abeschrijving" typeof="rdfs:Property" resource="http://schema.org/description">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/description" data-toggle="tooltip" data-content="http://schema.org/description" data-placement="right">
+                            beschrijving</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">Een beschrijving van het aanbod.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Aanbod%3Ageldig%20tot" typeof="rdfs:Property" resource="http://schema.org/validThrough">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/validThrough" data-toggle="tooltip" data-content="http://schema.org/validThrough" data-placement="right">
+                            geldig tot</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Einde van de geldigheid van het aanbod.</td>
+                        <td property="vann:usageNote">Geldigheid is inclusief de datum. De dag na de opgegeven datum is het aanbod niet meer geldig. </td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Aanbod%3Ageldig%20van" typeof="rdfs:Property" resource="http://schema.org/validFrom">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/validFrom" data-toggle="tooltip" data-content="http://schema.org/validFrom" data-placement="right">
+                            geldig van</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Begin van de geldigheid van het aanbod</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Aanbod%3Aklant%20type" typeof="rdfs:Property" resource="http://schema.org/eligibleCustomerType">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/eligibleCustomerType" data-toggle="tooltip" data-content="http://schema.org/eligibleCustomerType" data-placement="right">
+                            klant type</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">BusinessEntityType</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Type van klant waarvoor de aanbieding geldig is.</td>
+                        <td property="vann:usageNote">bijvoorbeeld &#34;ABC&#34;, &#34;Luisterpunt gebruiker&#34;.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Aanbod%3Anaam" typeof="rdfs:Property" resource="http://schema.org/name">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/name" data-toggle="tooltip" data-content="http://schema.org/name" data-placement="right">
+                            naam</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De naam van het product/dienst die het aanbod uitmaakt. </td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Abonnement"><a href="http://luisterpunt.data.gift/vocabularies/offer/Subscription" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/offer/Subscription" data-placement="right">Abonnement</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Een aanbieding voor een werk dat met regelmatige tussenposen wordt gepubliceerd.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Abonnement%3Aabonnementsduur">abonnementsduur</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Abonnement%3Aabonnementsduur" typeof="rdfs:Property" resource="http://schema.org/duration">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/duration" data-toggle="tooltip" data-content="http://schema.org/duration" data-placement="right">
+                            abonnementsduur</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#duration" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#duration" data-placement="right">Duration</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De  duur in ISO 8601 formaat. </td>
+                        <td property="vann:usageNote">Bijvoorbeeld &#39;P1Y&#39; (1 jaar), &#39;P6M&#39; (6 maanden) Zie ook https://en.wikipedia.org/wiki/ISO_8601#Durations.</td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Organisatie"><a href="http://schema.org/Organization" data-toggle="tooltip" data-content="http://schema.org/Organization" data-placement="right">Organisatie</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Een aantal mensen georganiseerd in een gemeenschap of andere sociale, commerciële of politieke structuur. De groep heeft een gemeenschappelijk doel of bestaansreden die de individuele leden ervan overstijgt en kan handelen als agent. </dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn geen eigenschappen gedefinieerd.</dd>
+                    
+                  </dl>
+                </div>
+                
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Product"><a href="http://schema.org/Product" data-toggle="tooltip" data-content="http://schema.org/Product" data-placement="right">Product</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Elk aangeboden product of dienst.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn geen eigenschappen gedefinieerd.</dd>
+                    
+                  </dl>
+                </div>
+                
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Uitlening"><a href="http://luisterpunt.data.gift/vocabularies/offer/Loan" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/offer/Loan" data-placement="right">Uitlening</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Aanbieding die het tijdelijke recht op gebruik van de opgegeven producten geeft.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn geen eigenschappen gedefinieerd.</dd>
+                    
+                  </dl>
+                </div>
+                
+            </div>
+            
+
+            
+            <div class="region region--no-space-top">
+              <h2 class="h2">Datatypes</h2>
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Contact Punt"><a href="http://schema.org/ContactPoint" data-toggle="tooltip" data-content="http://schema.org/ContactPoint" data-placement="right">Contact Punt</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor dit datatype zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Contact%20Punt%3Aemail">email</a>, 
+                      <a href="#Contact%20Punt%3Anaam">naam</a>, 
+                      <a href="#Contact%20Punt%3Atelefoon">telefoon</a>, 
+                      <a href="#Contact%20Punt%3Aurl">url</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                      
+                      <tr id="Contact%20Punt%3Aemail" typeof="rdfs:Property" resource="http://schema.org/email">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/email" data-toggle="tooltip" data-content="http://schema.org/email" data-placement="right">email</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">email adres</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="Contact%20Punt%3Anaam" typeof="rdfs:Property" resource="http://schema.org/name">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/name" data-toggle="tooltip" data-content="http://schema.org/name" data-placement="right">naam</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Contact naam</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="Contact%20Punt%3Atelefoon" typeof="rdfs:Property" resource="http://schema.org/telephone">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/telephone" data-toggle="tooltip" data-content="http://schema.org/telephone" data-placement="right">telefoon</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">telefoonnummer</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="Contact%20Punt%3Aurl" typeof="rdfs:Property" resource="http://schema.org/url">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/url" data-toggle="tooltip" data-content="http://schema.org/url" data-placement="right">url</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">webpagina</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
+            </div>
+            
+            
+          </div>
+    <!-- End page content -->
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
