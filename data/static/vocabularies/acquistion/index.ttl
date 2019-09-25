@@ -145,4 +145,4 @@ schema:position
 
 <https://www.w3.org/ns/prov#wasInvalidatedBy>
       a       rdf:Property ;
-      rdfs:label "werd geïnvalideerd door."@nl , "werd geïnvalideerd door"@nl .
+      rdfs:label "werd geïnvalideerd door"@nl , "werd geïnvalideerd door."@nl .

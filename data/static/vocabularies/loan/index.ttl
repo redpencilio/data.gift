@@ -18,86 +18,86 @@
 @prefix cpsv:    <http://purl.org/vocab/cpsv#> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 
-<http://luisterpunt.data.gift/vocabularies/loans>
+<http://luisterpunt.data.gift/vocabularies/loan>
       a       owl:Ontology ;
       rdfs:label "Luisterpunt - Loan"@en , "Luisterpunt - Uitlening"@nl ;
       dcterms:issued "2019-09-27"^^xsd:date ;
       dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
       dcterms:title "Luisterpunt - Loan"@en , "Luisterpunt - Uitlening"@nl ;
       vann:preferredNamespaceUri
-              "http://luisterpunt.data.gift/vocabularies/loans" .
+              "http://luisterpunt.data.gift/vocabularies/loan" .
 
-<http://luisterpunt.data.gift/vocabularies/loans/AccessReleaseActivity>
+<http://luisterpunt.data.gift/vocabularies/loan/AccessReleaseActivity>
       a       owl:Class ;
       rdfs:comment "Het opheffen van een toegangsrecht."@nl ;
-      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loan> ;
       rdfs:label "Toegangsopheffing"@nl ;
       rdfs:subClassOf prov:Activity .
 
-<http://luisterpunt.data.gift/vocabularies/loans/AccessRequest>
+<http://luisterpunt.data.gift/vocabularies/loan/AccessRequest>
       a       owl:Class ;
       rdfs:comment "Verzoek tot het bekomen van een bepaald product/dienst."@nl ;
-      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loan> ;
       rdfs:label "Access request"@en , "Toegangsaanvraag"@nl ;
       rdfs:subClassOf prov:Activity .
 
-<http://luisterpunt.data.gift/vocabularies/loans/AccessRequestMethod>
+<http://luisterpunt.data.gift/vocabularies/loan/AccessRequestMethod>
       a       owl:Class ;
       rdfs:comment "de manier waarop de toegang werd aangevraagd."@nl ;
-      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loan> ;
       rdfs:label "Toegangsaanvraag methode"@nl .
 
-<http://luisterpunt.data.gift/vocabularies/loans/AccessRight>
+<http://luisterpunt.data.gift/vocabularies/loan/AccessRight>
       a       owl:Class ;
       rdfs:comment "Een toegangsrecht geeft een gebruiker voor een bepaalde periode gebruiksrechten."@nl ;
-      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loan> ;
       rdfs:label "Toegangsrecht"@nl , "Access right"@en .
 
-<http://luisterpunt.data.gift/vocabularies/loans/Delivery>
+<http://luisterpunt.data.gift/vocabularies/loan/Delivery>
       a       owl:Class ;
       rdfs:comment "Bezorgen van een product of dienst aan de afnemer"@nl ;
-      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loan> ;
       rdfs:label "Levering"@nl .
 
-<http://luisterpunt.data.gift/vocabularies/loans/DeliveryMethod>
+<http://luisterpunt.data.gift/vocabularies/loan/DeliveryMethod>
       a       owl:Class ;
       rdfs:comment "Manier waarop het item werd aangeleverd."@nl ;
-      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loan> ;
       rdfs:label "leveringsmethode"@nl .
 
-<http://luisterpunt.data.gift/vocabularies/loans/GenerationActivity>
+<http://luisterpunt.data.gift/vocabularies/loan/GenerationActivity>
       a       owl:Class ;
       rdfs:comment "Activiteit die een item aanmaakt op basis van een instantie."@nl ;
-      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loan> ;
       rdfs:label "Generation activity"@en , "Generation activity"@nl .
 
-<http://luisterpunt.data.gift/vocabularies/loans/Item>
+<http://luisterpunt.data.gift/vocabularies/loan/Item>
       a       owl:Class ;
       rdfs:comment "Single example of an Instance."@en , "Eén specifiek voorbeeld van een instance."@nl ;
-      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loan> ;
       rdfs:label "Item"@en , "Item"@nl ;
       rdfs:subClassOf schema:CreativeWork , schema:IndividualProduct .
 
-<http://luisterpunt.data.gift/vocabularies/loans/Part>
+<http://luisterpunt.data.gift/vocabularies/loan/Part>
       a       owl:Class ;
       rdfs:comment "fysieke or virtuele delen van een item, bijvoorbeeld CD's, bestanden of banden."@nl ;
-      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loan> ;
       rdfs:label "Part"@en , "Volume"@nl ;
-      rdfs:subClassOf schema:CreativeWork , <http://luisterpunt.data.gift/vocabularies/loans/Item> .
+      rdfs:subClassOf schema:CreativeWork , <http://luisterpunt.data.gift/vocabularies/loan/Item> .
 
-<http://luisterpunt.data.gift/vocabularies/loans/PreferenceType>
+<http://luisterpunt.data.gift/vocabularies/loan/PreferenceType>
       a       owl:Class ;
       rdfs:comment "Type van een voorkeur, bijvoorbeeld \"auteur\" of \"stem\". Dit type omschrijft ook de te verwachte waarden."@nl ;
-      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loan> ;
       rdfs:label "Voorkeurstype"@nl .
 
-<http://luisterpunt.data.gift/vocabularies/loans/method>
+<http://luisterpunt.data.gift/vocabularies/loan/method>
       a       owl:ObjectProperty ;
       rdfs:comment "aanvraag methode: automatisch, door werknemer, manueel, ..."@nl ;
-      rdfs:domain <http://luisterpunt.data.gift/vocabularies/loans/AccessRequest> ;
-      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loans> ;
+      rdfs:domain <http://luisterpunt.data.gift/vocabularies/loan/AccessRequest> ;
+      rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loan> ;
       rdfs:label "methode"@nl ;
-      rdfs:range <http://luisterpunt.data.gift/vocabularies/loans/AccessRequestMethod> .
+      rdfs:range <http://luisterpunt.data.gift/vocabularies/loan/AccessRequestMethod> .
 
 schema:dateCreated
       a       rdf:Property ;
