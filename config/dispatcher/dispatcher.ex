@@ -27,7 +27,7 @@ defmodule Dispatcher do
   end
 
   get "/application-profiles/:name/:version/*path" do
-    Proxy.forward conn, [], "http://static-file/application-profiles/" <> name <> "/" <> version <> "/index.html"
+    Proxy.forward conn, path, "http://static-file/application-profiles/" <> name <> "/" <> version <> "/"
   end
 
   get "/application-profiles/:name" do
