@@ -432,6 +432,7 @@ table td {
                       <a href="#Persoon">Persoon</a> |
                       <a href="#Productie aanvraag">Productie aanvraag</a> |
                       <a href="#Productie levering">Productie levering</a> |
+                      <a href="#Titel">Titel</a> |
                       <a href="#Titel selectie">Titel selectie</a> |
                       <a href="#Zwartdrukboek bestelling">Zwartdrukboek bestelling</a> |
                       <a href="#Zwartdrukboek levering">Zwartdrukboek levering</a> |
@@ -491,7 +492,7 @@ table td {
                           </code>
                         </td>
                         <td><a href="http://fixme.com#ContactInfo" data-toggle="tooltip" data-content="http://fixme.com#ContactInfo" data-placement="right">ContactInfo</a></td>
-                        <td>1</td>
+                        <td>1...*</td>
                         <td property="rdfs:comment">Informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
@@ -802,7 +803,7 @@ table td {
                       <a href="#Instantie%3Aspeelduur">speelduur</a>, 
                       <a href="#Instantie%3Atoegankelijkheids%20eigenschap">toegankelijkheids eigenschap</a>, 
                       <a href="#Instantie%3Auitgave">uitgave</a>, 
-                      <a href="#Instantie%3Avlacc%20nummer">vlacc nummer</a>.</dd>
+                      <a href="#Instantie%3Avoorbeeld%20van%20werk">voorbeeld van werk</a>.</dd>
                     
                   </dl>
                 </div>
@@ -850,10 +851,10 @@ table td {
                         <td></td>
                       </tr>
                     
-                      <tr id="Instantie%3Aluisterpunt%20id" typeof="rdfs:Property" resource="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntId">
+                      <tr id="Instantie%3Aluisterpunt%20id" typeof="rdfs:Property" resource="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntID">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntId" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntId" data-placement="right">
+                            <a href="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntID" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntID" data-placement="right">
                             luisterpunt id</a>
                           </code>
                         </td>
@@ -948,16 +949,16 @@ table td {
                         <td></td>
                       </tr>
                     
-                      <tr id="Instantie%3Avlacc%20nummer" typeof="rdfs:Property" resource="http://luisterpunt.data.gift/vocabularies/offer/vlaccId">
+                      <tr id="Instantie%3Avoorbeeld%20van%20werk" typeof="rdfs:Property" resource="http://schema.org/exampleOfWork">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://luisterpunt.data.gift/vocabularies/offer/vlaccId" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/offer/vlaccId" data-placement="right">
-                            vlacc nummer</a>
+                            <a href="http://schema.org/exampleOfWork" data-toggle="tooltip" data-content="http://schema.org/exampleOfWork" data-placement="right">
+                            voorbeeld van werk</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
-                        <td>0...1</td>
-                        <td property="rdfs:comment">Identificatienummer in de Vlaamse Centrale Catalogus.</td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/catalog/Work" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/catalog/Work" data-placement="right">Work</a></td>
+                        <td>1...*</td>
+                        <td property="rdfs:comment">Een creatief werk waar dit werk een instantie van is.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -1314,9 +1315,9 @@ table td {
                             deel van bestelling</a>
                           </code>
                         </td>
-                        <td><a href="http://luisterpunt.data.gift/vocabularies/acquisition/ProductionRequest" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/ProductionRequest" data-placement="right">ProductionRequest</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">De productie aanvraag waartoe deze levering behoort.</td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/acquisition/ExternalWorkAcquisition" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/ExternalWorkAcquisition" data-placement="right">ExternalWorkAcquisition</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">De externe  aanvraag waartoe deze levering behoort.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -1328,9 +1329,9 @@ table td {
                             deel van bestelling</a>
                           </code>
                         </td>
-                        <td><a href="http://luisterpunt.data.gift/vocabularies/acquisition/ExternalWorkAcquisition" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/ExternalWorkAcquisition" data-placement="right">ExternalWorkAcquisition</a></td>
-                        <td>0...1</td>
-                        <td property="rdfs:comment">De externe  aanvraag waartoe deze levering behoort.</td>
+                        <td><a href="http://luisterpunt.data.gift/vocabularies/acquisition/ProductionRequest" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/ProductionRequest" data-placement="right">ProductionRequest</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De productie aanvraag waartoe deze levering behoort.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -1345,6 +1346,70 @@ table td {
                         <td><a href="http://luisterpunt.data.gift/vocabularies/acquisition/Sourcefile" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/acquisition/Sourcefile" data-placement="right">Sourcefile</a></td>
                         <td>1...*</td>
                         <td property="rdfs:comment">De bronbestanden die werden aangeleverd in deze levering.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Titel"><a href="http://luisterpunt.data.gift/vocabularies/catalog/Work" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/catalog/Work" data-placement="right">Titel</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Deze entiteit weerspiegelt de conceptuele essentie van een te catalogeren creatief werk.</dd>
+                    
+                    <dt>Eigenschappen</dt>
+                    
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Titel%3Adoelgroep">doelgroep</a>, 
+                      <a href="#Titel%3Avolume%20nummer">volume nummer</a>.</dd>
+                    
+                  </dl>
+                </div>
+                
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Titel%3Adoelgroep" typeof="rdfs:Property" resource="http://schema.org/audience">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/audience" data-toggle="tooltip" data-content="http://schema.org/audience" data-placement="right">
+                            doelgroep</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">Audience</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">en klasse van entiteiten voor wie het product of dienst bedoeld is. </td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Titel%3Avolume%20nummer" typeof="rdfs:Property" resource="http://schema.org/volumeNumber">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/volumeNumber" data-toggle="tooltip" data-content="http://schema.org/volumeNumber" data-placement="right">
+                            volume nummer</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">Identificeert het volume, of deel in een meerdelig werk.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>

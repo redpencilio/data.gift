@@ -494,7 +494,7 @@ table td {
                           </code>
                         </td>
                         <td><a href="http://fixme.com#ContactInfo" data-toggle="tooltip" data-content="http://fixme.com#ContactInfo" data-placement="right">ContactInfo</a></td>
-                        <td>1</td>
+                        <td>1...*</td>
                         <td property="rdfs:comment">Informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
@@ -529,6 +529,7 @@ table td {
                     <dt>Eigenschappen</dt>
                     
                     <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Creatief%20Werk%3Aaantal%20pagina%27s">aantal pagina&#39;s</a>, 
                       <a href="#Creatief%20Werk%3Aalternatieve%20titel">alternatieve titel</a>, 
                       <a href="#Creatief%20Werk%3Aauteur">auteur</a>, 
                       <a href="#Creatief%20Werk%3Abeschrijving">beschrijving</a>, 
@@ -537,7 +538,8 @@ table td {
                       <a href="#Creatief%20Werk%3Agenre">genre</a>, 
                       <a href="#Creatief%20Werk%3Ahetzelfde%20als">hetzelfde als</a>, 
                       <a href="#Creatief%20Werk%3Ataal">taal</a>, 
-                      <a href="#Creatief%20Werk%3Atitel">titel</a>.</dd>
+                      <a href="#Creatief%20Werk%3Atitel">titel</a>, 
+                      <a href="#Creatief%20Werk%3Avlacc%20id">vlacc id</a>.</dd>
                     
                   </dl>
                 </div>
@@ -556,6 +558,20 @@ table td {
                     </thead>
 
                     <tbody class="supertype">
+                    
+                      <tr id="Creatief%20Werk%3Aaantal%20pagina%27s" typeof="rdfs:Property" resource="http://schema.org/numberOfPages">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/numberOfPages" data-toggle="tooltip" data-content="http://schema.org/numberOfPages" data-placement="right">
+                            aantal pagina&#39;s</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">int</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Aantal paginas van het zwartdrukbroek. Deze informatie is een indicatie van het volume. </td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
                     
                       <tr id="Creatief%20Werk%3Aalternatieve%20titel" typeof="rdfs:Property" resource="http://schema.org/alternativeHeadline">
                         <td>
@@ -683,6 +699,20 @@ table td {
                         <td></td>
                       </tr>
                     
+                      <tr id="Creatief%20Werk%3Avlacc%20id" typeof="rdfs:Property" resource="http://fixme.com#vlaccID">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://fixme.com#vlaccID" data-toggle="tooltip" data-content="http://fixme.com#vlaccID" data-placement="right">
+                            vlacc id</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Identificatienummer in de Vlaamse Centrale Catalogus.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+                    
                     </tbody>
                   </table>
                 </div>
@@ -711,7 +741,6 @@ table td {
                       <a href="#Instantie%3Atoegankelijkheids%20eigenschap">toegankelijkheids eigenschap</a>, 
                       <a href="#Instantie%3Auitgave">uitgave</a>, 
                       <a href="#Instantie%3Auitgever">uitgever</a>, 
-                      <a href="#Instantie%3Avlacc%20nummer">vlacc nummer</a>, 
                       <a href="#Instantie%3Avoorbeeld%20van%20werk">voorbeeld van werk</a>.</dd>
                     
                   </dl>
@@ -788,10 +817,10 @@ table td {
                         <td></td>
                       </tr>
                     
-                      <tr id="Instantie%3Aluisterpunt%20id" typeof="rdfs:Property" resource="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntId">
+                      <tr id="Instantie%3Aluisterpunt%20id" typeof="rdfs:Property" resource="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntID">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntId" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntId" data-placement="right">
+                            <a href="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntID" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/offer/luisterpuntID" data-placement="right">
                             luisterpunt id</a>
                           </code>
                         </td>
@@ -910,20 +939,6 @@ table td {
                         <td><a href="http://luisterpunt.data.gift/vocabularies/core/Agent" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/core/Agent" data-placement="right">Agent</a></td>
                         <td>0...*</td>
                         <td property="rdfs:comment">De persoon of organisatie die het boek uitgeeft.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Instantie%3Avlacc%20nummer" typeof="rdfs:Property" resource="http://luisterpunt.data.gift/vocabularies/offer/vlaccId">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://luisterpunt.data.gift/vocabularies/offer/vlaccId" data-toggle="tooltip" data-content="http://luisterpunt.data.gift/vocabularies/offer/vlaccId" data-placement="right">
-                            vlacc nummer</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
-                        <td>0...1</td>
-                        <td property="rdfs:comment">Identificatienummer in de Vlaamse Centrale Catalogus.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
