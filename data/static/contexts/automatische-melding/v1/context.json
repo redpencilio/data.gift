@@ -12,7 +12,7 @@
       "@id": "pav:createdBy",
       "@type": "@id"
     },
-    "url": { "@type": "@id", "@id": "prov:atLocation"},
+    "href": { "@type": "@id", "@id": "prov:atLocation"},
     "submittedResource": { "@type": "@id", "@id": "dct:subject" },
     "key": "muAccount:key",
     "publisher": "pav:providedBy",
