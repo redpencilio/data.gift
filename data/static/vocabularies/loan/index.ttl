@@ -69,7 +69,8 @@
       a       owl:Class ;
       rdfs:comment "Activiteit die een item aanmaakt op basis van een instantie."@nl ;
       rdfs:isDefinedBy <http://luisterpunt.data.gift/vocabularies/loan> ;
-      rdfs:label "Generation activity"@en , "Generation activity"@nl .
+      rdfs:label "Item creatie"@nl , "Generation activity"@en ;
+      rdfs:subClassOf prov:Activity .
 
 <http://luisterpunt.data.gift/vocabularies/loan/Item>
       a       owl:Class ;
@@ -120,6 +121,9 @@ schema:validThrough
 <http://www.w3.org/ns/auth/acl#accessTo>
       a       rdf:Property ;
       rdfs:label "geeft toegang tot"@nl .
+
+prov:endedAtTime
+      a       rdf:Property .
 
 prov:startedAtTime
       a       rdf:Property ;
