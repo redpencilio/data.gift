@@ -9,14 +9,14 @@ task:Task a rdfs:Class ;
     rdfs:label "Task"@en ;
     rdfs:comment "Unit of work to be executed"@en .
 
-task:reasonOfFailure a rdf:Property
+task:reasonOfFailure a rdf:Property ;
     rdfs:isDefinedBy <http://redpencil.data.gift/vocabularies/tasks/v1/> ;
     rdfs:label "Reason of failure"@en ;
     rdfs:comment "Reason why a task transitioned to a failure state"@en ;
     rdfs:domain task:Task ;
     rdfs:range xsd:string .
 
-task:numberOfRetries a rdf:Property
+task:numberOfRetries a rdf:Property ;
     rdfs:isDefinedBy <http://redpencil.data.gift/vocabularies/tasks/v1/> ;
     rdfs:label "Number of retries"@en ;
     rdfs:comment "Number of retries to succesfully end the task"@en ;
