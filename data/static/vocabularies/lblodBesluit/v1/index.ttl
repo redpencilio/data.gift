@@ -1,0 +1,46 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix lblodBesluit: <http://lblod.data.gift/vocabularies/besluit/>
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+lblodBesluit:authenticityType a rdf:Property ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/besluit/v1/> ;
+    rdfs:label "Authenticity type"@en ;
+    rdfs:comment "Authenticity level of the document" ;
+    rdfs:domain <http://xmlns.com/foaf/0.1/Document> ;
+    rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
+
+lblodBesluit:chartOfAccount a rdf:Property ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/besluit/v1/> ;
+    rdfs:label "Chart of account"@en ;
+    rdfs:comment "Chart of account referenced in the decision" ;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Besluit> ;
+    rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
+
+lblodBesluit:taxType a rdf:Property ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/besluit/v1/> ;
+    rdfs:label "Tax type"@en ;
+    rdfs:comment "Tax type referenced in the decision" ;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Besluit> ;
+    rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
+
+lblodBesluit:taxRate a rdf:Property ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/besluit/v1/> ;
+    rdfs:label "Tax rate"@en, "Aanslagvoet"@nl ;
+    rdfs:comment "Tax rate referenced in the decision" ;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Besluit> ;
+    rdfs:range lblodBesluit:TaxRate .
+
+lblodBesluit:TaxRate a rdfs:Class ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/besluit/v1/> ;
+    rdfs:subClassOf <http://schema.org/UnitPriceSpecification> ;
+    rdfs:label "Tax rate"@en, "Aanslagvoet"@nl ;
+    rdfs:comment "Specification of a tax rate" .
+
+lblodBesluit:taxableBase a rdf:Property ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/besluit/v1/> ;
+    rdfs:label "Taxable base"@en, "Belastbare basis"@nl ;
+    rdfs:comment "Taxable base on which a tax is calculated" ;
+    rdfs:domain lblodBesluit:TaxRate .
+    
+
