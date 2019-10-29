@@ -7,8 +7,6 @@ services:
       STATIC_FOLDERS_REGEX: ^/(assets|font|contexts|application-profiles|vocabularies|concepts|concept-schemes|images)/
     links:
       - identifier:backend
-    ports:
-      - 80:80
   identifier:
     image: semtech/mu-identifier:1.7.0
     links:
