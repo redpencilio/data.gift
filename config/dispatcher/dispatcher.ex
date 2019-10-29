@@ -18,11 +18,15 @@ defmodule Dispatcher do
   # docker-compose stop; docker-compose rm; docker-compose up
   # after altering this file.
   #
+  get "/images/*path" do
+    Proxy.forward conn, path, "http://static-file/images/"
+  end
+
   get "/vocabularies/:name/:version/*path" do
     Proxy.forward conn, [], "http://static-file/vocabularies/" <> name <> "/" <> version <> "/index.ttl"
   end
 
-  get "/vocabularies/:name/" do
+  get "/vocabularies/:name/*path" do
     Proxy.forward conn, [], "http://static-file/vocabularies/" <> name <> "/index.ttl"
   end
 

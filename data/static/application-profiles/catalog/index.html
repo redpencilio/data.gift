@@ -11,340 +11,339 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="https://www.luisterpunt.be/themes/custom/luisterpunt/favicon.ico" type="image/vnd.microsoft.icon" />
   <style type="text/css">
-  <!--
-/*
- * I add this to html files generated with pandoc.
- */
+   <!--
 
-html {
-  font-size: 100%;
-  overflow-y: scroll;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
 
-.logo {
-   height: 200px;
-   background-color: #007a9c;
- }
-body {
-  color: #444;
-  font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
-  font-size: 12px;
-  line-height: 1.7;
-  padding: 1em;
-  margin: auto ;
-  margin-left: 1em;
-  max-width: 50em;
-  background: #fefefe;
-}
+   .logo {
+     position: fixed;
+     top: 70px;
+     left: -120px;
+     transform: rotate(270deg);
+     margin: 0;
+     padding: 0;
+   }
+   .logo > img {
+     height: 150px;
+   }
 
-a {
-  color:  #007a9c;
-  text-decoration: none;
-}
+   body {
+     color: #444;
+     font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+     font-size: 12px;
+     line-height: 1.7;
+     margin: 0 ;
+     padding: 0;
+     margin-left: 120px;
+     max-width: 50em;
+     background: #fefefe;
+   }
 
-a:visited {
-  color: #0b0080;
-}
+   a {
+     color:  #007a9c;
+     text-decoration: none;
+   }
 
-a:hover {
-  color: #06e;
-}
+   a:visited {
+     color: #0b0080;
+   }
 
-a:active {
-  color: #faa700;
-}
+   a:hover {
+     color: #06e;
+   }
 
-a:focus {
-  outline: thin dotted;
-}
+   a:active {
+     color: #faa700;
+   }
 
-*::-moz-selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #000;
-}
+   a:focus {
+     outline: thin dotted;
+   }
 
-*::selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #000;
-}
+   *::-moz-selection {
+     background: rgba(255, 255, 0, 0.3);
+     color: #000;
+   }
 
-a::-moz-selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #0645ad;
-}
+   *::selection {
+     background: rgba(255, 255, 0, 0.3);
+     color: #000;
+   }
 
-a::selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #0645ad;
-}
+   a::-moz-selection {
+     background: rgba(255, 255, 0, 0.3);
+     color: #0645ad;
+   }
 
-p {
-  margin: 1em 0;
-}
+   a::selection {
+     background: rgba(255, 255, 0, 0.3);
+     color: #0645ad;
+   }
 
-img {
-  max-width: 100%;
-}
+   p {
+     margin: 1em 0;
+   }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #111;
-  line-height: 125%;
-  margin-top: 2em;
-  font-weight: normal;
-}
+   img {
+     max-width: 100%;
+   }
 
-h4, h5, h6 {
-  font-weight: bold;
-}
+   h1, h2, h3, h4, h5, h6 {
+     color: #111;
+     line-height: 125%;
+     margin-top: 0.5em;
+     font-weight: normal;
+   }
 
-h1 {
-  font-size: 2.5em;
-}
+   h4, h5, h6 {
+     font-weight: bold;
+   }
 
-h2 {
-  font-size: 2em;
-}
+   h1 {
+     font-size: 2.5em;
+   }
 
-h3 {
-  font-size: 1.5em;
-}
+   h2 {
+     font-size: 2em;
+   }
 
-h4 {
-  font-size: 1.2em;
-}
+   h3 {
+     font-size: 1.5em;
+   }
 
-h5 {
-  font-size: 1em;
-}
+   h4 {
+     font-size: 1.2em;
+   }
 
-h6 {
-  font-size: 0.9em;
-}
+   h5 {
+     font-size: 1em;
+   }
 
-blockquote {
-  color: #666666;
-  margin: 0;
-  padding-left: 3em;
-  border-left: 0.5em #EEE solid;
-}
+   h6 {
+     font-size: 0.9em;
+   }
 
-hr {
-  display: block;
-  height: 2px;
-  border: 0;
-  border-top: 1px solid #aaa;
-  border-bottom: 1px solid #eee;
-  margin: 1em 0;
-  padding: 0;
-}
+   blockquote {
+     color: #666666;
+     margin: 0;
+     padding-left: 3em;
+     border-left: 0.5em #EEE solid;
+   }
 
-pre, code, kbd, samp {
-  color: #000;
-  font-family: monospace, monospace;
-  _font-family: 'courier new', monospace;
-  font-size: 0.98em;
-}
+   hr {
+     display: block;
+     height: 2px;
+     border: 0;
+     border-top: 1px solid #aaa;
+     border-bottom: 1px solid #eee;
+     margin: 1em 0;
+     padding: 0;
+   }
 
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
+   pre, code, kbd, samp {
+     color: #000;
+     font-family: monospace, monospace;
+     _font-family: 'courier new', monospace;
+     font-size: 0.98em;
+   }
 
-b, strong {
-  font-weight: bold;
-}
+   pre {
+     white-space: pre;
+     white-space: pre-wrap;
+     word-wrap: break-word;
+   }
 
-dfn {
-  font-style: italic;
-}
+   b, strong {
+     font-weight: bold;
+   }
 
-ins {
-  background: #ff9;
-  color: #000;
-  text-decoration: none;
-}
+   dfn {
+     font-style: italic;
+   }
 
-mark {
-  background: #ff0;
-  color: #000;
-  font-style: italic;
-  font-weight: bold;
-}
+   ins {
+     background: #ff9;
+     color: #000;
+     text-decoration: none;
+   }
 
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
+   mark {
+     background: #ff0;
+     color: #000;
+     font-style: italic;
+     font-weight: bold;
+   }
 
-sup {
-  top: -0.5em;
-}
+   sub, sup {
+     font-size: 75%;
+     line-height: 0;
+     position: relative;
+     vertical-align: baseline;
+   }
 
-sub {
-  bottom: -0.25em;
-}
+   sup {
+     top: -0.5em;
+   }
 
-ul, ol {
-  margin: 1em 0;
-  padding: 0 0 0 2em;
-}
+   sub {
+     bottom: -0.25em;
+   }
 
-li p:last-child {
-  margin-bottom: 0;
-}
+   ul, ol {
+     margin: 1em 0;
+     padding: 0 0 0 2em;
+   }
 
-ul ul, ol ol {
-  margin: .3em 0;
-}
+   li p:last-child {
+     margin-bottom: 0;
+   }
 
-dl {
-  margin-bottom: 1em;
-}
+   ul ul, ol ol {
+     margin: .3em 0;
+   }
 
-dt {
-  font-weight: bold;
-  margin-bottom: .8em;
-}
+   dl {
+     margin-bottom: 1em;
+   }
 
-dd {
-  margin: 0 0 .8em 2em;
-}
+   dt {
+     font-weight: bold;
+     margin-bottom: .8em;
+   }
 
-dd:last-child {
-  margin-bottom: 0;
-}
+   dd {
+     margin: 0 0 .8em 2em;
+   }
 
-img {
-  border: 0;
-  -ms-interpolation-mode: bicubic;
-  vertical-align: middle;
-}
+   dd:last-child {
+     margin-bottom: 0;
+   }
 
-figure {
-  display: block;
-  text-align: center;
-  margin: 1em 0;
-}
+   img {
+     border: 0;
+     -ms-interpolation-mode: bicubic;
+     vertical-align: middle;
+   }
 
-figure img {
-  border: none;
-  margin: 0 auto;
-}
+   figure {
+     display: block;
+     text-align: center;
+     margin: 1em 0;
+   }
 
-figcaption {
-  font-size: 0.8em;
-  font-style: italic;
-  margin: 0 0 .8em;
-}
+   figure img {
+     border: none;
+     margin: 0 auto;
+   }
 
-table {
-  margin-bottom: 2em;
-  border-bottom: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-spacing: 0;
-  border-collapse: collapse;
-}
+   figcaption {
+     font-size: 0.8em;
+     font-style: italic;
+     margin: 0 0 .8em;
+   }
 
-table th {
-  padding: .2em 1em;
-  background-color: #eee;
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-}
+   table {
+     margin-bottom: 2em;
+     border-bottom: 1px solid #ddd;
+     border-right: 1px solid #ddd;
+     border-spacing: 0;
+     border-collapse: collapse;
+   }
 
-table td {
-  padding: .2em 1em;
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-  vertical-align: top;
-}
+   table th {
+     padding: .2em 1em;
+     background-color: #eee;
+     border-top: 1px solid #ddd;
+     border-left: 1px solid #ddd;
+   }
 
-.author {
-  font-size: 1.2em;
-  text-align: center;
-}
+   table td {
+     padding: .2em 1em;
+     border-top: 1px solid #ddd;
+     border-left: 1px solid #ddd;
+     vertical-align: top;
+   }
 
-@media only screen and (min-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-}
-@media print {
-  * {
-    background: transparent !important;
-    color: black !important;
-    filter: none !important;
-    -ms-filter: none !important;
-  }
+   .author {
+     font-size: 1.2em;
+     text-align: center;
+   }
 
-  body {
-    font-size: 12pt;
-    max-width: 100%;
-  }
+   @media only screen and (min-width: 480px) {
+     body {
+       font-size: 14px;
+     }
+   }
+   @media only screen and (min-width: 768px) {
+     body {
+       font-size: 16px;
+     }
+   }
+   @media print {
+     * {
+       background: transparent !important;
+       color: black !important;
+       filter: none !important;
+       -ms-filter: none !important;
+     }
 
-  a, a:visited {
-    text-decoration: underline;
-  }
+     body {
+       font-size: 12pt;
+       max-width: 100%;
+     }
 
-  hr {
-    height: 1px;
-    border: 0;
-    border-bottom: 1px solid black;
-  }
+     a, a:visited {
+       text-decoration: underline;
+     }
 
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
+     hr {
+       height: 1px;
+       border: 0;
+       border-bottom: 1px solid black;
+     }
 
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
+     a[href]:after {
+       content: " (" attr(href) ")";
+     }
 
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
-    content: "";
-  }
+     abbr[title]:after {
+       content: " (" attr(title) ")";
+     }
 
-  pre, blockquote {
-    border: 1px solid #999;
-    padding-right: 1em;
-    page-break-inside: avoid;
-  }
+     .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+       content: "";
+     }
 
-  tr, img {
-    page-break-inside: avoid;
-  }
+     pre, blockquote {
+       border: 1px solid #999;
+       padding-right: 1em;
+       page-break-inside: avoid;
+     }
 
-  img {
-    max-width: 100% !important;
-  }
+     tr, img {
+       page-break-inside: avoid;
+     }
 
-  @page :left {
-    margin: 15mm 20mm 15mm 10mm;
-}
+     img {
+       max-width: 100% !important;
+     }
 
-  @page :right {
-    margin: 15mm 10mm 15mm 20mm;
-}
+     @page :left {
+       margin: 15mm 20mm 15mm 10mm;
+     }
 
-  p, h2, h3 {
-    orphans: 3;
-    widows: 3;
-  }
+     @page :right {
+       margin: 15mm 10mm 15mm 20mm;
+     }
 
-  h2, h3 {
-    page-break-after: avoid;
-  }
-}  -->
+     p, h2, h3 {
+       orphans: 3;
+       widows: 3;
+     }
+
+     h2, h3 {
+       page-break-after: avoid;
+     }
+   }  -->
   </style>
 </head>
 
@@ -352,50 +351,60 @@ table td {
 
   <!-- Start page content -->
   <div class="logo">
-  <img src="https://luisterpunt.be/themes/custom/luisterpunt/images/logo.svg" alt="Logo luisterpunt">
+    <img src="/images/luisterpunt.png" alt="Logo luisterpunt">
   </div>
-    <div class="page">
-      <div class="region">
-        <div class="layout layout--wide">
-          <div class="grid u-hr">
-            <div class="col--9-12 col--1-1--s">
-              <h1 class="h1">Luisterpunt Catalogus AP</h1>
-              <div class="head" role="contentinfo" id="respecHeader">
-                <dl>
-                  <dt>Laatste aanpassing</dt>
-                  <dd>2019-09-26</dd>
+  <div class="page">
+    <div class="region">
+      <div class="layout layout--wide">
+        <div class="grid u-hr">
+          <div class="col--9-12 col--1-1--s">
+            <h1 class="h1">Luisterpunt Catalogus AP</h1>
+            <div class="head" role="contentinfo" id="respecHeader">
+              <dl>
+                <dt>Laatste aanpassing</dt>
+                <dd>2019-10-29</dd>
 
-                  
-                  
+                
+                
 
-                  
-                  
+                
+                
 
-                  
-                  
-                </dl>
-              </div>
+                
+                
+              </dl>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div id="main" itemprop="mainContentOfPage" role="main" tabindex="-1" class="main-content">
-      <div class="layout layout--wide">
-        <div class="grid">
-          <div class="col--8-12 col--12-12--s">
-            <div class="region" id="introduction">
-              <div class="introduction typography">
+  </div>
+  <div id="main" itemprop="mainContentOfPage" role="main" tabindex="-1" class="main-content">
+    <div class="layout layout--wide">
+      <div class="grid">
+        <div class="col--8-12 col--12-12--s">
+          <div class="region" id="introduction">
+            <div class="introduction typography">
               
-                <p>Dit document beschrijft een <strong>applicatieprofiel</strong>, in dit geval <strong>Luisterpunt Catalogus AP</strong>.
-                </p>
+              <p>Dit document beschrijft een <strong>applicatieprofiel</strong>, in dit geval <strong>Luisterpunt Catalogus AP</strong>.
+              </p>
               
-              </div>
             </div>
+          </div>
 
-            <div class="region region--no-space-top typography" id="summary">
-                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Samenvatting</h2>
-                
+          <div class="region region--no-space-top typography" id="summary">
+            <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Samenvatting</h2>
+                            <p>Luisterpuntbibliotheek beschikt over een catalogus van titels die tot uitdrukking komen via instanties in aangepaste leesformaten zoals Daisy en braille. Deze instanties zijn gebaseerd op gedrukte boeken, e-boeken of bestaande ingelezen literatuur. Deze “bronnen” zijn ook instanties. Instanties zijn een verdere verdieping van de entiteiten titel en creatief werk. </p>
+
+                <p>Een “toegankelijke” instantie onderscheidt zich hoofdzakelijk van haar bron door nader omschreven toegankelijkheidsvoorzieningen die de tekstuele inhoud verrijken of vervangen.  </p>
+
+                <p>Luisterpunt houdt de naam en eventueel contactgegevens bij van agents die een relatie hebben met een creatief werk of met het aanbod van instanties. De agents kunnen verder gedefinieerd worden als personen of organisaties. </p>
+
+                <p>Een persoon kan optreden als een agent die als auteur of met een andere verantwoordelijkheid heeft bijgedragen aan de realisatie van het creatieve werk. Bij een Daisy-boek kan een persoon optreden als inlezer van het gesproken boek. </p>
+
+                <p>Een organisatie zoals Luisterpunt of gelijkaardige organisaties nemen de (betwistbare) rol op van uitgever van de instantie in aangepast leesformaat.</p>
+                </p>
+
                 
             </div>
 

@@ -12,29 +12,28 @@
   <link rel="shortcut icon" href="https://www.luisterpunt.be/themes/custom/luisterpunt/favicon.ico" type="image/vnd.microsoft.icon" />
   <style type="text/css">
   <!--
-/*
- * I add this to html files generated with pandoc.
- */
 
-html {
-  font-size: 100%;
-  overflow-y: scroll;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
 
 .logo {
-   height: 200px;
-   background-color: #007a9c;
- }
+position: fixed;
+top: 70px;
+left: -120px;
+transform: rotate(270deg);
+margin: 0;
+padding: 0;
+}
+.logo > img {
+  height: 150px;
+}
+
 body {
   color: #444;
   font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
   font-size: 12px;
   line-height: 1.7;
-  padding: 1em;
-  margin: auto ;
-  margin-left: 1em;
+  margin: 0 ;
+  padding: 0;
+  margin-left: 120px;
   max-width: 50em;
   background: #fefefe;
 }
@@ -91,7 +90,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
   color: #111;
   line-height: 125%;
-  margin-top: 2em;
+  margin-top: 0.5em;
   font-weight: normal;
 }
 
@@ -352,7 +351,7 @@ table td {
 
   <!-- Start page content -->
   <div class="logo">
-  <img src="https://luisterpunt.be/themes/custom/luisterpunt/images/logo.svg" alt="Logo luisterpunt">
+  <img src="/images/luisterpunt.png" alt="Logo luisterpunt">
   </div>
     <div class="page">
       <div class="region">
@@ -363,7 +362,7 @@ table td {
               <div class="head" role="contentinfo" id="respecHeader">
                 <dl>
                   <dt>Laatste aanpassing</dt>
-                  <dd>2019-09-26</dd>
+                  <dd>2019-10-29</dd>
 
                   
                   
