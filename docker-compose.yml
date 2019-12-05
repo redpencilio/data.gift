@@ -37,6 +37,7 @@ services:
     image: semtech/static-file-service:latest
     volumes:
       - ./data/static:/data
+      - ./config/static:/config
   cache:
     image: semtech/mu-cache:2.0.0
     links:
