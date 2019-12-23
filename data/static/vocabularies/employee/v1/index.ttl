@@ -1,0 +1,68 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix empl: <http://lblod.data.gift/vocabularies/employee/>
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+@prefix qb: <http://purl.org/linked-data/cube#>
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>
+@prefix time: <http://www.w3.org/2006/time#>
+
+empl:EmployeeDataset a rdfs:Class ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/employee/v1/> ;
+    rdfs:subClassOf qb:DataSet ;
+    rdfs:label "Employee data set"@en, "Werknemersdataset"@nl ;
+    rdfs:comment "Dataset consisting of observations related to employees." .
+
+empl:EmployeePeriodSlice a rdfs:Class ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/employee/v1/> ;
+    rdfs:subClassOf qb:Slice ;
+    rdfs:label "Employee period slice"@en, "Tijdsgebonden subset van Werknemersdata"@nl ;
+    rdfs:comment "Slice of an employee data set spanning a specific period in time." .
+
+empl:EmployeeObservation a rdfs:Class ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/employee/v1/> ;
+    rdfs:subClassOf qb:Observation ;
+    rdfs:label "Employee observation"@en, "Werknemerobservatie"@nl ;
+    rdfs:comment "Observation related to an employee." .
+
+empl:EmployeeTimePeriod a rdfs:Class ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/employee/v1/> ;
+    rdfs:subClassOf time:DateTimeInterval ;
+    rdfs:label "Employee time period"@en, "Werknemers tijdperiode"@nl ;
+    rdfs:comment "Period in time related to employees." .
+
+empl:EmployeeUnitMeasure a rdfs:Class ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/employee/v1/> ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Employee unit measure"@en, "Werknemers meeteenheid"@nl ;
+    rdfs:comment "Unit measure for observations about employees." .
+
+empl:EducationalLevel a rdfs:Class ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/employee/v1/> ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Education level"@en, "Opleidingsniveau"@nl .
+
+empl:WorkingTimeCategory a rdfs:Class ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/employee/v1/> ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Working time category"@en, "Tewerkstellingstelsel"@nl .
+
+empl:EmployeeLegalStatus a rdfs:Class ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/employee/v1/> ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Employee legal status"@en, "Werknemersstatuut"@nl .
+
+
+empl:workingTimeCategory a rdf:Property ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/employee/v1/> ;
+    rdfs:label "Working time category"@en ;
+    rdfs:comment "Working time category of an observation" ;
+    rdfs:domain empl:EmployeeObservation ;
+    rdfs:range emply:WorkingTimeCategory .
+
+empl:legalStatus a rdf:Property ;
+    rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/employee/v1/> ;
+    rdfs:label "Legal status"@en ;
+    rdfs:comment "Legal status of an observation" ;
+    rdfs:domain empl:EmployeeObservation ;
+    rdfs:range emply:EmployeeLegalStatus .
+
