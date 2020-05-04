@@ -1,0 +1,106 @@
+#################################################################
+###  Generated with the experimental alpha version of the TTL exporter of WebVOWL (version 1.1.7)  http://visualdataweb.de/webvowl/   ###
+#################################################################
+
+@prefix :     <http://data.lblod.info/ontologies/rrn-request/> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc:     <http://purl.org/dc/elements/1.1/> .
+@prefix xml:      <http://www.w3.org/XML/1998/namespace> .
+@prefix wot:      <http://xmlns.com/wot/0.1/> .
+@prefix vs:     <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms:      <http://purl.org/dc/terms/> .
+@prefix muAccount:      <http://mu.semte.ch/vocabularies/account/> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix besluit:      <http://data.vlaanderen.be/ns/besluit#> .
+@prefix :     <http://data.lblod.info/ontologies/rrn-request/> .
+@prefix schema:     <http://schema.org/> .
+@prefix acl:      <http://www.w3.org/ns/auth/acl#> .
+@prefix dataRequest:      <http://data.lblod.info/vocabularies/data-request/> .
+@base       <http://data.lblod.info/ontologies/rrn-request/> .
+
+<http://data.lblod.info/ontologies/rrn-request/> rdf:type owl:Ontology ;
+                                                 dc:title "SSN Request"@en;
+                                                 dc:description "Ontology describing the request for a SSN.  The actual request can be sent through a JSON-LD payload."@en;
+                                                 owl:versionInfo "v0.0.1"@en;
+                                                 dc:creator "Aad Versteden" .
+#################################################################
+
+###  Property Definitions (Number of Property) 5 ###
+#  --------------------------- Property 0-------------------------
+muAccount:key rdf:type owl:DatatypeProperty ;
+              rdfs:label "key"@IRI-based;
+              rdfs:label "key"@iri-based;
+              rdfs:label "key"@en;
+              rdfs:domain <http://data.lblod.info/application-profiles/ssn-access-control/SSNAgent>;
+              rdfs:range rdfs:Literal .
+#  --------------------------- Property 1-------------------------
+<http://www.w3.org/ns/adms#identifier> rdf:type owl:DatatypeProperty ;
+                                       rdfs:label "identifier"@IRI-based;
+                                       rdfs:label "identifier"@iri-based;
+                                       rdfs:label "identifier"@en;
+                                       rdfs:domain :foaf:Person;
+                                       rdfs:range xsd:string .
+#  --------------------------- Property 2-------------------------
+schema:memberOf rdf:type owl:ObjectProperty ;
+                rdfs:label "memberOf"@IRI-based;
+                rdfs:label "memberOf"@iri-based;
+                rdfs:label "memberOf"@en;
+                rdfs:domain :foaf:Person;
+                rdfs:range besluit:BestuursEenheid .
+#  --------------------------- Property 3-------------------------
+:requestedPerson rdf:type owl:ObjectProperty ;
+                 rdfs:label "requestedPerson"@IRI-based;
+                 rdfs:label "requestedPerson"@iri-based;
+                 rdfs:label "requestedPerson"@en;
+                 rdfs:domain :PersonUriRequest;
+                 rdfs:range :foaf:Person .
+#  --------------------------- Property 4-------------------------
+dataRequest:requester rdf:type owl:ObjectProperty ;
+                      rdfs:label "requester"@IRI-based;
+                      rdfs:label "requester"@iri-based;
+                      rdfs:label "requester"@en;
+                      rdfs:domain :PersonUriRequest;
+                      rdfs:range <http://data.lblod.info/application-profiles/ssn-access-control/SSNAgent> .
+###  Class Definitions (Number of Classes) 7 ###
+#  --------------------------- Class  0-------------------------
+<http://data.lblod.info/application-profiles/ssn-access-control/SSNAgent> rdf:type owl:Class;
+                                                                          rdfs:subClassOf foaf:Agent ;
+                                                                          rdfs:label "SSNAgent"@IRI-based;
+                                                                          rdfs:label "SSNAgent"@iri-based;
+                                                                          rdfs:label "SSN Agent"@en .
+#  --------------------------- Class  1-------------------------
+foaf:Agent rdf:type owl:Class;
+           rdfs:label "Agent"@IRI-based;
+           rdfs:label "Agent"@iri-based;
+           rdfs:label "Agent"@en .
+#  --------------------------- Class  2-------------------------
+dataRequest:Subject rdf:type owl:Class;
+                    rdfs:label "Subject"@IRI-based;
+                    rdfs:label "Subject"@iri-based;
+                    rdfs:label "Subject"@en .
+#  --------------------------- Class  3-------------------------
+dataRequest:DataRequest rdf:type owl:Class;
+                        rdfs:label "DataRequest"@IRI-based;
+                        rdfs:label "DataRequest"@iri-based;
+                        rdfs:label "DataRequest"@en .
+#  --------------------------- Class  4-------------------------
+:PersonUriRequest rdf:type owl:Class;
+                  rdfs:subClassOf dataRequest:DataRequest ;
+                  rdfs:label "PersonUriRequest"@IRI-based;
+                  rdfs:label "PersonUriRequest"@iri-based;
+                  rdfs:label "PersonUriRequest"@en .
+#  --------------------------- Class  5-------------------------
+besluit:BestuursEenheid rdf:type owl:Class;
+                        rdfs:label "BestuursEenheid"@IRI-based;
+                        rdfs:label "BestuursEenheid"@iri-based;
+                        rdfs:label "BestuursEenheid"@en .
+#  --------------------------- Class  6-------------------------
+:foaf:Person rdf:type owl:Class;
+             rdfs:subClassOf dataRequest:Subject ;
+             rdfs:label "foaf:Person"@IRI-based;
+             rdfs:label "foaf:Person"@iri-based;
+             rdfs:label "foaf:Person"@en .

@@ -1,0 +1,139 @@
+#################################################################
+###  Generated with the experimental alpha version of the TTL exporter of WebVOWL (version 1.1.7)  http://visualdataweb.de/webvowl/   ###
+#################################################################
+
+@prefix :     <http://data.lblod.info/application-profiles/ssn-access-control/> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc:     <http://purl.org/dc/elements/1.1/> .
+@prefix xml:      <http://www.w3.org/XML/1998/namespace> .
+@prefix dcterms:      <http://purl.org/dc/terms/> .
+@prefix wot:      <http://xmlns.com/wot/0.1/> .
+@prefix muAccount:      <http://mu.semte.ch/vocabularies/account/> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix besluit:      <http://data.vlaanderen.be/ns/besluit#> .
+@prefix :     <http://www.w3.org/ns/auth/acl#> .
+@prefix vs:     <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix schema:     <http://schema.org/> .
+@prefix acl:      <http://www.w3.org/ns/auth/acl#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix dataRequest:      <http://data.lblod.info/vocabularies/data-request/> .
+@base       <http://data.lblod.info/application-profiles/ssn-access-control/> .
+
+<http://data.lblod.info/application-profiles/ssn-access-control/> rdf:type owl:Ontology ;
+                                                                  dc:title "SSN Access Control"@en; 
+                                                                  dc:description "SSN Access Control definition for SSN Request"@en; 
+                                                                  owl:versionInfo "v0.0.1"@en;
+                                                                  dc:creator "Niels Vandekeybus, Aad Versteden" . 
+#################################################################
+
+###  Property Definitions (Number of Property) 8 ###
+#  --------------------------- Property 0------------------------- 
+muAccount:key rdf:type owl:DatatypeProperty ;
+              rdfs:label "key"@IRI-based; 
+              rdfs:label "key"@iri-based; 
+              rdfs:label "key"@en; 
+              rdfs:domain foaf:OnlineAccount;
+              rdfs:range xsd:string . 
+#  --------------------------- Property 1------------------------- 
+:mode rdf:type owl:ObjectProperty ;
+      rdfs:comment "A mode of access such as read or write." ;
+      rdfs:label "mode"@IRI-based; 
+      rdfs:label "mode"@iri-based; 
+      rdfs:label "access mode"@en; 
+      rdfs:domain :Authorization;
+      rdfs:range :Read . 
+#  --------------------------- Property 2------------------------- 
+foaf:account rdf:type owl:ObjectProperty ;
+             rdfs:label "account"@IRI-based; 
+             rdfs:label "account"@iri-based; 
+             rdfs:label "account"@en; 
+             rdfs:domain :SsnAgent;
+             rdfs:range foaf:OnlineAccount . 
+#  --------------------------- Property 3------------------------- 
+:member rdf:type owl:ObjectProperty ;
+        rdfs:label "member"@IRI-based; 
+        rdfs:label "member"@iri-based; 
+        rdfs:label "member"@en; 
+        rdfs:domain <http://data.lblod.info/application-profiles/ssn-access-controlVendor>;
+        rdfs:range :SsnAgent . 
+#  --------------------------- Property 4------------------------- 
+:accessTo rdf:type owl:ObjectProperty ;
+          rdfs:comment "The information resource to which access is being granted." ;
+          rdfs:label "accessTo"@IRI-based; 
+          rdfs:label "accessTo"@iri-based; 
+          rdfs:label "to"@en; 
+          rdfs:domain :Authorization;
+          rdfs:range :SSNAccess . 
+#  --------------------------- Property 5------------------------- 
+dcterms:subject rdf:type owl:ObjectProperty ;
+                rdfs:label "subject"@IRI-based; 
+                rdfs:label "subject"@iri-based; 
+                rdfs:label "subject"@en; 
+                rdfs:domain :SSNAccess;
+                rdfs:range besluit:BestuursEenheid . 
+#  --------------------------- Property 6------------------------- 
+:agent rdf:type owl:ObjectProperty ;
+       rdfs:comment "A person or social entity to being given the right" ;
+       rdfs:label "agent"@IRI-based; 
+       rdfs:label "agent"@iri-based; 
+       rdfs:label "agent"@en; 
+       rdfs:domain :Authorization;
+       rdfs:range :SsnAgent . 
+#  --------------------------- Property 7------------------------- 
+muAccount:salt rdf:type owl:DatatypeProperty ;
+               rdfs:label "salt"@en; 
+               rdfs:domain foaf:OnlineAccount;
+               rdfs:range rdfs:Literal . 
+###  Class Definitions (Number of Classes) 9 ###
+#  --------------------------- Class  0------------------------- 
+<http://www.w3.org/2006/gen/ont#InformationResource> rdf:type owl:Class; 
+                                                     rdfs:label "InformationResource"@IRI-based; 
+                                                     rdfs:label "InformationResource"@iri-based . 
+#  --------------------------- Class  1------------------------- 
+foaf:Agent rdf:type owl:Class; 
+           rdfs:label "Agent"@IRI-based; 
+           rdfs:label "Agent"@iri-based . 
+#  --------------------------- Class  2------------------------- 
+:SSNAccess rdf:type owl:Class; 
+           rdfs:subClassOf <http://www.w3.org/2006/gen/ont#InformationResource> ;
+           rdfs:label "SSNAccess"@IRI-based; 
+           rdfs:label "person-identifier-access"@iri-based; 
+           rdfs:label "SSN Access"@en . 
+#  --------------------------- Class  3------------------------- 
+<http://data.lblod.info/application-profiles/ssn-access-controlVendor> rdf:type owl:Class; 
+                                                                       rdfs:subClassOf foaf:Agent ;
+                                                                       rdfs:label "ssn-access-controlVendor"@IRI-based; 
+                                                                       rdfs:label "ssn-access-controlVendor"@iri-based; 
+                                                                       rdfs:label "Vendor"@en . 
+#  --------------------------- Class  4------------------------- 
+:Authorization rdf:type owl:Class; 
+               rdfs:comment "An element of access control,
+    allowing agent to agents access of some kind to resources or classes of resources" ;
+               rdfs:label "Authorization"@IRI-based; 
+               rdfs:label "Authorization"@iri-based; 
+               rdfs:label "Authorization"@en . 
+#  --------------------------- Class  5------------------------- 
+:Read rdf:type owl:Class; 
+      rdfs:comment "The class of read operations" ;
+      rdfs:label "Read"@IRI-based; 
+      rdfs:label "Read"@iri-based; 
+      rdfs:label "read"@en . 
+#  --------------------------- Class  6------------------------- 
+:SsnAgent rdf:type owl:Class; 
+          rdfs:subClassOf foaf:Agent ;
+          rdfs:label "SsnAgent"@IRI-based; 
+          rdfs:label "ssn-access-controlSsnAgent"@iri-based; 
+          rdfs:label "SsnAgent"@en . 
+#  --------------------------- Class  7------------------------- 
+besluit:BestuursEenheid rdf:type owl:Class; 
+                        rdfs:label "BestuursEenheid"@IRI-based; 
+                        rdfs:label "BestuursEenheid"@iri-based; 
+                        rdfs:label "BestuursEenheid"@en . 
+#  --------------------------- Class  8------------------------- 
+foaf:OnlineAccount rdf:type owl:Class; 
+                   rdfs:label "OnlineAccount"@IRI-based; 
+                   rdfs:label "OnlineAccount"@iri-based; 
+                   rdfs:label "OnlineAccount"@en . 
