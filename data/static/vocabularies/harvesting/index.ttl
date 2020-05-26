@@ -1,0 +1,14 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix harvesting: <http://lblod.data.gift/vocabularies/harvesting/> .
+
+harvesting:HarvestingTask
+    a   rdfs:Class ;
+            rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/harvesting/v1/> ;
+            rdfs:label "Harvesting Task"@en ;
+            rdfs:comment "Describes/encapsulates the status and progress of a harvesting task." .
+
+harvesting:HarvestingCollection
+    a   rdfs:Class ;
+            rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/harvesting/v1/> ;
+            rdfs:label "Harvesting Collection"@en ;
+            rdfs:comment "Collection that contains all the resources/files that can be harvested" .
