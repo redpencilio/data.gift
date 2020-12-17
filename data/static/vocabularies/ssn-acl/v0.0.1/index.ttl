@@ -128,10 +128,10 @@ foaf:Agent rdf:type owl:Class;
           rdfs:label "ssn-access-controlSsnAgent"@iri-based; 
           rdfs:label "SsnAgent"@en . 
 #  --------------------------- Class  7------------------------- 
-besluit:BestuursEenheid rdf:type owl:Class; 
-                        rdfs:label "BestuursEenheid"@IRI-based; 
-                        rdfs:label "BestuursEenheid"@iri-based; 
-                        rdfs:label "BestuursEenheid"@en . 
+besluit:Bestuurseenheid rdf:type owl:Class; 
+                        rdfs:label "Bestuurseenheid"@IRI-based; 
+                        rdfs:label "Bestuurseenheid"@iri-based; 
+                        rdfs:label "Bestuurseenheid"@en . 
 #  --------------------------- Class  8------------------------- 
 foaf:OnlineAccount rdf:type owl:Class; 
                    rdfs:label "OnlineAccount"@IRI-based; 
