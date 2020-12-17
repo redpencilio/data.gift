@@ -73,7 +73,7 @@ dcterms:subject rdf:type owl:ObjectProperty ;
                 rdfs:label "subject"@iri-based; 
                 rdfs:label "subject"@en; 
                 rdfs:domain :SSNAccess;
-                rdfs:range besluit:BestuursEenheid . 
+                rdfs:range besluit:Bestuurseenheid . 
 #  --------------------------- Property 6------------------------- 
 :agent rdf:type owl:ObjectProperty ;
        rdfs:comment "A person or social entity to being given the right" ;
