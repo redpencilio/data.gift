@@ -1,0 +1,299 @@
+@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:                <http://www.w3.org/2002/07/owl#> .
+@prefix dc:                 <http://purl.org/dc/elements/1.1/> .
+@prefix subsidie:           <http://data.vlaanderen.be/ns/subsidie#> .
+@prefix besluitSubsidie:    <http://data.vlaanderen.be/doc/applicatieprofiel/besluit-subsidie/#> .
+@prefix m8g:                <http://data.europa.eu/m8g/> .
+@prefix skos:               <http://www.w3.org/2004/02/skos/core#> .
+@prefix cpsv:               <http://purl.org/vocab/cpsv#> .
+@prefix dct:                <http://purl.org/dc/terms/> .
+@prefix gleif:              <http://www.gleif.org/ontology/Base/> .
+@prefix ext:                <http://mu.semte.ch/vocabularies/ext/> .
+@prefix mobiliteit:         <http://data.vlaanderen.be/ns/mobiliteit#> .
+@prefix transactie:         <http://data.vlaanderen.be/ns/transactie#> .
+@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov:               <http://www.w3.org/ns/prov#> .
+@prefix adms:               <http://www.w3.org/ns/adms#> .
+@prefix foaf:               <http://xmlns.com/foaf/0.1/> .
+@prefix lblodSubsidie:      <http://lblod.data.gift/vocabularies/subsidie/> .
+@prefix xkos:               <http://rdf-vocabulary.ddialliance.org/xkos#> .
+@prefix qb:                 <http://purl.org/linked-data/cube#> .
+@prefix nfo:                <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix common:             <http://www.w3.org/2007/uwa/context/common.owl#> .
+@prefix dqm:                <http://purl.org/dqm-vocabulary/v1/dqm#> .
+@prefix mu:                 <http://mu.semte.ch/vocabularies/core/> .
+
+@base <http://data.lblod.info/ontologies/subsidy-application-form-flow> .
+
+<http://data.lblod.info/ontologies/subsidy-application-form-flow> rdf:type owl:Ontology;
+                                                                  dc:title "Subsidy Application Model"@en;
+                                                                  dc:description "Ontology describing the Subsidy Application Model."@en;
+                                                                  owl:versionInfo "v0.1.0"@en;
+                                                                  dc:creator "Dries Hugaerts".
+
+########################################################################################################################
+# START CLASS SubsidiemaatregelAanbodReeks
+########################################################################################################################
+
+lblodSubsidie:SubsidiemaatregelAanbodReeks  rdf:type owl:Class;
+                                            rdfs:subClassOf gleif:Period ;
+                                            rdfs:label "SubsidyMeasureOfferSeries"@en;
+                                            rdfs:label "SubsidiemaatregelAanbodReeks"@nl.
+
+mu:uuid                                     rdf:type owl:DatatypeProperty;
+                                            rdfs:label "uuid"@en;
+                                            rdfs:label "uuid"@nl;
+                                            owl:minCardinality 1;
+                                            owl:minCardinality 1;
+                                            rdfs:domain lblodSubsidie:SubsidiemaatregelAanbodReeks;
+                                            rdfs:range xsd:string .
+
+common:active                               rdf:type owl:ObjectProperty;
+                                            rdfs:label "active application flow"@en;
+                                            rdfs:label "active application flow"@nl;
+                                            owl:maxCardinality 1;
+                                            owl:minCardinality 0;
+                                            rdfs:domain lblodSubsidie:SubsidiemaatregelAanbodReeks;
+                                            rdfs:range lblodSubsidie:ApplicationFlow .
+
+mobiliteit:periode                          rdf:type owl:ObjectProperty;
+                                            rdfs:label "period"@en;
+                                            rdfs:label "periode"@nl;
+                                            rdfs:comment "The period in which the subsidy measure offer series is carried out."@en;
+                                            rdfs:comment "De periode waarin de subsidiemaatregel aanbod reeks uitgevoerd wordt."@nl;
+                                            owl:maxCardinality 1;
+                                            owl:minCardinality 1;
+                                            rdfs:domain lblodSubsidie:SubsidiemaatregelAanbodReeks;
+                                            rdfs:range gleif:Period .
+
+skos:inScheme                               rdf:type owl:ObjectProperty;
+                                            rdfs:label "is reeks for"@en;
+                                            rdfs:label "is reeks van"@nl;
+                                            owl:maxCardinality 1;
+                                            owl:minCardinality 1;
+                                            rdfs:domain lblodSubsidie:SubsidiemaatregelAanbodReeks;
+                                            rdfs:range subsidie:SubsidiemaatregelAanbod .
+
+########################################################################################################################
+# END CLASS SubsidiemaatregelAanbodReeks
+########################################################################################################################
+
+########################################################################################################################
+# START CLASS ApplicationFlow
+########################################################################################################################
+
+lblodSubsidie:ApplicationFlow   rdf:type owl:Class;
+                                rdfs:label "SubsidyApplicationFlow"@en;
+                                rdfs:label "SubsidieDossierFlow"@nl.
+
+mu:uuid                         rdf:type owl:DatatypeProperty;
+                                rdfs:label "uuid"@en;
+                                rdfs:label "uuid"@nl;
+                                owl:minCardinality 1;
+                                owl:minCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationFlow;
+                                rdfs:range xsd:string .
+
+xkos:belongsTo                  rdf:type owl:ObjectProperty;
+                                rdfs:label "belongs to"@en;
+                                owl:minCardinality 1;
+                                owl:maxCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationFlow;
+                                rdfs:range subsidie:SubsidiemaatregelAanbodReeks .
+
+xkos:next                       rdf:type owl:ObjectProperty;
+                                rdfs:label "first step"@en;
+                                rdfs:comment "first step of the application-flow"@en;
+                                owl:minCardinality 0;
+                                owl:maxCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationFlow;
+                                rdfs:range lblodSubsidie:ApplicationStep .
+
+########################################################################################################################
+# END CLASS ApplicationFlow
+########################################################################################################################
+
+########################################################################################################################
+# START CLASS ApplicationStep
+########################################################################################################################
+
+lblodSubsidie:ApplicationStep   rdf:type owl:Class;
+                                rdfs:label "SubsidyApplicationStep"@en;
+                                rdfs:label "SubsidiedossierStap"@nl.
+
+mu:uuid                         rdf:type owl:DatatypeProperty;
+                                rdfs:label "uuid"@en;
+                                rdfs:label "uuid"@nl;
+                                owl:minCardinality 1;
+                                owl:minCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationStep;
+                                rdfs:range xsd:string .
+
+qb:order                        rdf:type owl:DatatypeProperty;
+                                rdfs:label "order"@en;
+                                rdfs:comment """indicates a priority order for the components of sets with this structure, used to guide presentations - lower order numbers come before higher numbers, un-numbered components come last"""@en;
+                                owl:minCardinality 1;
+                                owl:minCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationStep;
+                                rdfs:range xsd:integer .
+
+dct:source                      rdf:type owl:ObjectProperty;
+                                rdfs:label "form-specification"@en;
+                                owl:minCardinality 0;
+                                owl:maxCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationStep;
+                                rdfs:range nfo:FileDataObject.
+
+dct:references                  rdf:type owl:ObjectProperty;
+                                rdfs:label "references procedure step"@en;
+                                owl:minCardinality 1;
+                                owl:maxCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationStep;
+                                rdfs:range subsidie:Subsidieprocedurestap.
+
+dct:isPartOf                    rdf:type owl:ObjectProperty;
+                                rdfs:label "is part of"@en;
+                                owl:minCardinality 1;
+                                owl:maxCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationStep;
+                                rdfs:range lblodSubsidie:ApplicationFlow.
+
+xkos:previous                   rdf:type owl:ObjectProperty;
+                                rdfs:label "previos-step"@en;
+                                rdfs:comment "indicates what application-step came before the current application-step"@en;
+                                owl:minCardinality 0;
+                                rdfs:domain lblodSubsidie:ApplicationStep;
+                                rdfs:range lblodSubsidie:ApplicationStep .
+
+xkos:next                       rdf:type owl:ObjectProperty;
+                                rdfs:label "next-step"@en;
+                                rdfs:comment "indicates what application-step is next after the current application-step"@en;
+                                owl:minCardinality 0;
+                                rdfs:domain lblodSubsidie:ApplicationStep;
+                                rdfs:range lblodSubsidie:ApplicationStep .
+
+dqm:hasRequirement              rdf:type owl:ObjectProperty;
+                                rdfs:label "requirement"@en;
+                                rdfs:label "vereiste"@nl;
+                                rdfs:comment "Specifies the requirements that have to be fulfilled before moving to the next application-step."@en;
+                                owl:minCardinality 0;
+                                rdfs:domain lblodSubsidie:ApplicationStep;
+                                rdfs:range skos:Concept.
+
+########################################################################################################################
+# END CLASS ApplicationStep
+########################################################################################################################
+
+########################################################################################################################
+# START CLASS SubsidieMaatregelConsumptie
+########################################################################################################################
+
+subsidie:SubsidiemaatregelConsumptie    rdf:type owl:Class;
+                                        rdfs:label "SubsidymeasureConsumption"@en;
+                                        rdfs:label "SubsidiemaatregelConsumptie"@nl;
+                                        rdfs:comment "The purchase of a subsidy measure to decide whether or not to conclude a financial transaction."@en;
+                                        rdfs:comment "De afname van een subsidiemaatregel om al dan niet tot een financiële transactie te komen."@nl.
+
+mu:uuid                                 rdf:type owl:DatatypeProperty;
+                                        rdfs:label "uuid"@en;
+                                        rdfs:label "uuid"@nl;
+                                        owl:minCardinality 1;
+                                        owl:minCardinality 1;
+                                        rdfs:domain subsidie:SubsidiemaatregelConsumptie;
+                                        rdfs:range xsd:string .
+
+cpsv:follows                            rdf:type owl:ObjectProperty;
+                                        rdfs:label "follows"@en;
+                                        rdfs:label "is gestuurd door"@nl;
+                                        rdfs:comment "References back to application-flow that is being followed by this subsidymeasure consumption."@en;
+                                        owl:minCardinality 1;
+                                        rdfs:domain subsidie:SubsidiemaatregelConsumptie;
+                                        rdfs:range subsidie:ApplicationFlow .
+
+common:active                           rdf:type owl:ObjectProperty;
+                                        rdfs:label "active application step"@en;
+                                        rdfs:label "active application flow"@nl;
+                                        owl:minCardinality 1;
+                                        rdfs:domain subsidie:SubsidiemaatregelConsumptie;
+                                        rdfs:range lblodSubsidie:ApplicationStep .
+
+dct:source                              rdf:type owl:ObjectProperty;
+                                        rdfs:label "application-form"@en;
+                                        owl:minCardinality 0;
+                                        rdfs:domain subsidie:SubsidiemaatregelConsumptie;
+                                        rdfs:range lblodSubsidie:ApplicationForm .
+
+########################################################################################################################
+# END CLASS SubsidieMaatregelConsumptie
+########################################################################################################################
+
+########################################################################################################################
+# START CLASS ApplicationForm
+########################################################################################################################
+
+lblodSubsidie:ApplicationForm   rdf:type owl:Class;
+                                rdfs:label "SubsidyApplicationForm"@en;
+                                rdfs:label "SubsidieFormulier "@nl;
+                                rdfs:comment "Resource encapsulating a form data that is provided by user"@en.
+
+mu:uuid                         rdf:type owl:DatatypeProperty;
+                                rdfs:label "uuid"@en;
+                                rdfs:label "uuid"@nl;
+                                owl:minCardinality 1;
+                                owl:minCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationForm ;
+                                rdfs:range xsd:string .
+
+dct:created                     rdf:type owl:DatatypeProperty;
+                                rdfs:label "created"@en;
+                                rdfs:label "aangemaakt"@nl;
+                                owl:minCardinality 1;
+                                owl:minCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationForm ;
+                                rdfs:range xsd:dateTime .
+
+dct:modified                    rdf:type owl:DatatypeProperty;
+                                rdfs:label "modified"@en;
+                                rdfs:label "bijgewerkt"@nl;
+                                owl:minCardinality 1;
+                                owl:minCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationForm ;
+                                rdfs:range xsd:dateTime .
+
+ext:lastModifiedBy              rdf:type owl:ObjectProperty;
+                                rdfs:label "last modifier"@en;
+                                rdfs:label "laatste bewerker"@nl;
+                                owl:maxCardinality 1;
+                                owl:minCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationForm ;
+                                rdfs:range foaf:Person .
+
+dct:creator                     rdf:type owl:ObjectProperty;
+                                rdfs:label "creator"@en;
+                                rdfs:label "aanmaker"@nl;
+                                owl:maxCardinality 1;
+                                owl:minCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationForm ;
+                                rdfs:range foaf:Person .
+
+dct:isPartOf                    rdf:type owl:ObjectProperty;
+                                rdfs:label "is part of"@en;
+                                rdfs:label "is onderdeel van"@en;
+                                rdfs:comment "References back to application-step this form was created for."@en;
+                                owl:minCardinality 1;
+                                owl:maxCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationForm;
+                                rdfs:range lblodSubsidie:ApplicationStep.
+
+adms:status                     rdf:type owl:ObjectProperty;
+                                rdfs:label "status"@en;
+                                rdfs:label "status"@nl;
+                                owl:maxCardinality 1;
+                                owl:minCardinality 1;
+                                rdfs:domain lblodSubsidie:ApplicationForm ;
+                                rdfs:range skos:Concept.
+
+########################################################################################################################
+# END CLASS ApplicationForm
+########################################################################################################################
