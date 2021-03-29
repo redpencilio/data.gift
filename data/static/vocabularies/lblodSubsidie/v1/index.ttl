@@ -67,7 +67,7 @@ mobiliteit:periode                          rdf:type owl:ObjectProperty;
                                             rdfs:domain lblodSubsidie:SubsidiemaatregelAanbodReeks;
                                             rdfs:range gleif:Period .
 
-skos:inScheme                               rdf:type owl:ObjectProperty;
+lblodSubsidie:heeftReeks                    rdf:type owl:ObjectProperty;
                                             rdfs:label "is reeks for"@en;
                                             rdfs:label "is reeks van"@nl;
                                             owl:maxCardinality 1;
