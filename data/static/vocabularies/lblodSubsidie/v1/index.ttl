@@ -215,7 +215,7 @@ cpsv:follows                            rdf:type owl:ObjectProperty;
                                         rdfs:comment "References back to application-flow that is being followed by this subsidymeasure consumption."@en;
                                         owl:minCardinality 1;
                                         rdfs:domain subsidie:SubsidiemaatregelConsumptie;
-                                        rdfs:range subsidie:ApplicationFlow .
+                                        rdfs:range lblodSubsidie:ApplicationFlow .
 
 common:active                           rdf:type owl:ObjectProperty;
                                         rdfs:label "active application step"@en;
@@ -229,6 +229,14 @@ dct:source                              rdf:type owl:ObjectProperty;
                                         owl:minCardinality 0;
                                         rdfs:domain subsidie:SubsidiemaatregelConsumptie;
                                         rdfs:range lblodSubsidie:ApplicationForm .
+
+adms:status                             rdf:type owl:ObjectProperty;
+                                        rdfs:label "status"@en;
+                                        rdfs:label "status"@nl;
+                                        owl:maxCardinality 1;
+                                        owl:minCardinality 1;
+                                        rdfs:domain subsidie:SubsidiemaatregelConsumptie;
+                                        rdfs:range skos:Concept.
 
 ########################################################################################################################
 # END CLASS SubsidieMaatregelConsumptie
