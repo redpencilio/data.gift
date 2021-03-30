@@ -75,6 +75,12 @@ lblodSubsidie:heeftReeks                    rdf:type owl:ObjectProperty;
                                             rdfs:domain lblodSubsidie:SubsidiemaatregelAanbodReeks;
                                             rdfs:range subsidie:SubsidiemaatregelAanbod .
 
+lblodSubsidie:heeftSubsidieprocedurestap    rdf:type owl:ObjectProperty;
+                                            rdfs:label "has subsidieprocedurestap"@en;
+                                            rdfs:label "heeft subsidieprocedurestap"@nl;
+                                            rdfs:domain lblodSubsidie:SubsidiemaatregelAanbodReeks;
+                                            rdfs:range subsidie:SubsidieProcedurestap .
+
 ########################################################################################################################
 # END CLASS SubsidiemaatregelAanbodReeks
 ########################################################################################################################
