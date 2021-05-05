@@ -30,7 +30,9 @@
                                                                   dc:title "Subsidy Application Model"@en;
                                                                   dc:description "Ontology describing the Subsidy Application Model."@en;
                                                                   owl:versionInfo "v0.1.0"@en;
-                                                                  dc:creator "Dries Hugaerts".
+                                                                  dc:creator "Dries Hugaerts";
+                                                                  dc:creator "Felix Ruiz de Arcaute".
+                                                                  
 
 ########################################################################################################################
 # START CLASS SubsidiemaatregelAanbodReeks
