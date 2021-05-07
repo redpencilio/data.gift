@@ -47,6 +47,7 @@ mu:uuid                                     rdf:type owl:DatatypeProperty;
                                             rdfs:label "uuid"@nl;
                                             #owl:minCardinality 1;
                                             #owl:minCardinality 1;
+                                            rdfs:definedBy <http://mu.semte.ch/vocabularies/core/>;
                                             rdfs:domain lblodSubsidie:SubsidiemaatregelAanbodReeks;
                                             rdfs:range xsd:string .
 
