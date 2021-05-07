@@ -45,8 +45,8 @@ lblodSubsidie:SubsidiemaatregelAanbodReeks  rdf:type owl:Class;
 mu:uuid                                     rdf:type owl:DatatypeProperty;
                                             rdfs:label "uuid"@en;
                                             rdfs:label "uuid"@nl;
-                                            owl:minCardinality 1;
-                                            owl:minCardinality 1;
+                                            #owl:minCardinality 1;
+                                            #owl:minCardinality 1;
                                             rdfs:domain lblodSubsidie:SubsidiemaatregelAanbodReeks;
                                             rdfs:range xsd:string .
 
