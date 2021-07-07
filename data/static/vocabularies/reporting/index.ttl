@@ -1,0 +1,7 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix lblodReporting: <http://lblod.data.gift/vocabularies/reporting/>
+
+lblodReporting:Report a rdfs:Class ;
+  rdfs:isDefinedBy <http://lblod.data.gift/vocabularies/reporting/> ;
+  rdfs:label "Report"@en, "Rapport"@nl ;
+  rdfs:comment "A report of some data of interest" .
