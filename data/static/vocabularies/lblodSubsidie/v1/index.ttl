@@ -64,7 +64,6 @@ mobiliteit:periode                          rdf:type owl:ObjectProperty;
                                             rdfs:comment "The period in which the subsidy measure offer series is carried out."@en;
                                             rdfs:comment "De periode waarin de subsidiemaatregel aanbod reeks uitgevoerd wordt."@nl;
                                             owl:maxCardinality 1;
-                                            owl:minCardinality 1;
                                             rdfs:domain lblodSubsidie:SubsidiemaatregelAanbodReeks;
                                             rdfs:range gleif:Period .
 
